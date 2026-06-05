@@ -10,8 +10,9 @@ import { wFragen } from "@/content/topics/w-fragen";
 import { jaNeinFragen } from "@/content/topics/ja-nein-fragen";
 import { wortpositionImSatz } from "@/content/topics/wortposition-im-satz";
 import { satzklammer } from "@/content/topics/satzklammer";
+import { nomenPlural } from "@/content/topics/nomen-plural";
 
-const TOPICS: GrammarTopic[] = [personalpronomen, konjugationPraesens, verbenSeinHaben, verbenMitVokalwechsel, modalverben, trennbareVerben, imperativ, wFragen, jaNeinFragen, wortpositionImSatz, satzklammer];
+const TOPICS: GrammarTopic[] = [personalpronomen, konjugationPraesens, verbenSeinHaben, verbenMitVokalwechsel, modalverben, trennbareVerben, imperativ, wFragen, jaNeinFragen, wortpositionImSatz, satzklammer, nomenPlural];
 
 export function getAllTopics(): GrammarTopic[] {
   return [...TOPICS].sort((a, b) => a.order - b.order);
