@@ -8,8 +8,9 @@ import { trennbareVerben } from "@/content/topics/trennbare-verben";
 import { imperativ } from "@/content/topics/imperativ";
 import { wFragen } from "@/content/topics/w-fragen";
 import { jaNeinFragen } from "@/content/topics/ja-nein-fragen";
+import { wortpositionImSatz } from "@/content/topics/wortposition-im-satz";
 
-const TOPICS: GrammarTopic[] = [personalpronomen, konjugationPraesens, verbenSeinHaben, verbenMitVokalwechsel, modalverben, trennbareVerben, imperativ, wFragen, jaNeinFragen];
+const TOPICS: GrammarTopic[] = [personalpronomen, konjugationPraesens, verbenSeinHaben, verbenMitVokalwechsel, modalverben, trennbareVerben, imperativ, wFragen, jaNeinFragen, wortpositionImSatz];
 
 export function getAllTopics(): GrammarTopic[] {
   return [...TOPICS].sort((a, b) => a.order - b.order);
