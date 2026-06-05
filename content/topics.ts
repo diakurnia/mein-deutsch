@@ -5,8 +5,9 @@ import { verbenSeinHaben } from "@/content/topics/verben-sein-haben";
 import { verbenMitVokalwechsel } from "@/content/topics/verben-mit-vokalwechsel";
 import { modalverben } from "@/content/topics/modalverben";
 import { trennbareVerben } from "@/content/topics/trennbare-verben";
+import { imperativ } from "@/content/topics/imperativ";
 
-const TOPICS: GrammarTopic[] = [personalpronomen, konjugationPraesens, verbenSeinHaben, verbenMitVokalwechsel, modalverben, trennbareVerben];
+const TOPICS: GrammarTopic[] = [personalpronomen, konjugationPraesens, verbenSeinHaben, verbenMitVokalwechsel, modalverben, trennbareVerben, imperativ];
 
 export function getAllTopics(): GrammarTopic[] {
   return [...TOPICS].sort((a, b) => a.order - b.order);
