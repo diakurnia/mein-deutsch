@@ -132,6 +132,12 @@ Buka web → Login → Dashboard → Pilih topik
 → Tandai selesai → Kembali ke Dashboard (progress bertambah)
 ```
 
+### Gaya visual (disepakati)
+- **Arah desain:** Playful & ramah (ala Duolingo) — kartu membulat, ikon, maskot 🦉, progress bar menonjol.
+- **Warna utama:** Toska muda / mint (sekitar `#2dd4bf`, aksen `#5eead4`, teks gelap `#0f766e`). Latar terang, lembut di mata.
+- **Penjelasan panjang:** ringkas dulu + tautan **"Baca selengkapnya"** untuk memperluas (Opsi B). Teks panjang dipecah jadi paragraf pendek, poin, istilah disorot, dan kotak sorotan untuk peringatan.
+- **Styling diimplementasikan dengan Tailwind CSS.**
+
 ---
 
 ## 5. Error Handling & Testing (garis besar)
@@ -162,6 +168,14 @@ Buka web → Login → Dashboard → Pilih topik
 - Audio kualitas native (Forvo / Cloud TTS) — upgrade dari Web Speech API tanpa bongkar struktur.
 
 ---
+
+## 6b. Catatan kesiapan SEO (untuk go-public nanti)
+
+MVP menempatkan materi di balik login (cukup untuk kelompok kecil). Bila nanti ingin dipublikasikan & efektif SEO, perubahannya **inkremental, bukan rombak besar**, karena pilihan teknis sudah mendukung:
+- **Next.js** mendukung SSR/SSG, Metadata API, dan sitemap — fondasi SEO yang kuat.
+- **Materi sebagai data terstruktur** mudah dirender jadi halaman publik yang bisa di-index + structured data (schema.org).
+
+**Prinsip desain yang dipegang sejak MVP supaya transisi mulus:** pisahkan *render materi* dari *cek login*. Halaman materi dibuat agar *bisa* dirender tanpa login (server-side); login hanya membungkus fitur personal (progress, tandai selesai). Saat go-public: buka akses baca materi tanpa login, tambah metadata/sitemap/structured data, dan pasang domain custom.
 
 ## 7. Langkah berikutnya
 1. Buat rencana implementasi detail (skill writing-plans).
