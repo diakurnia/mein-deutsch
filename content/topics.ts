@@ -17,8 +17,9 @@ import { kasusDativ } from "@/content/topics/kasus-dativ";
 import { possessivartikel } from "@/content/topics/possessivartikel";
 import { artikelInterrogativDemonstrativ } from "@/content/topics/artikel-interrogativ-demonstrativ";
 import { personalpronomenAkkusativDativ } from "@/content/topics/personalpronomen-akkusativ-dativ";
+import { praeteritumSeinHaben } from "@/content/topics/praeteritum-sein-haben";
 
-const TOPICS: GrammarTopic[] = [personalpronomen, konjugationPraesens, verbenSeinHaben, verbenMitVokalwechsel, modalverben, trennbareVerben, imperativ, wFragen, jaNeinFragen, wortpositionImSatz, satzklammer, nomenPlural, negation, kasusAkkusativ, kasusDativ, possessivartikel, artikelInterrogativDemonstrativ, personalpronomenAkkusativDativ];
+const TOPICS: GrammarTopic[] = [personalpronomen, konjugationPraesens, verbenSeinHaben, verbenMitVokalwechsel, modalverben, trennbareVerben, imperativ, wFragen, jaNeinFragen, wortpositionImSatz, satzklammer, nomenPlural, negation, kasusAkkusativ, kasusDativ, possessivartikel, artikelInterrogativDemonstrativ, personalpronomenAkkusativDativ, praeteritumSeinHaben];
 
 export function getAllTopics(): GrammarTopic[] {
   return [...TOPICS].sort((a, b) => a.order - b.order);
