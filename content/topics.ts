@@ -13,8 +13,9 @@ import { satzklammer } from "@/content/topics/satzklammer";
 import { nomenPlural } from "@/content/topics/nomen-plural";
 import { negation } from "@/content/topics/negation";
 import { kasusAkkusativ } from "@/content/topics/kasus-akkusativ";
+import { kasusDativ } from "@/content/topics/kasus-dativ";
 
-const TOPICS: GrammarTopic[] = [personalpronomen, konjugationPraesens, verbenSeinHaben, verbenMitVokalwechsel, modalverben, trennbareVerben, imperativ, wFragen, jaNeinFragen, wortpositionImSatz, satzklammer, nomenPlural, negation, kasusAkkusativ];
+const TOPICS: GrammarTopic[] = [personalpronomen, konjugationPraesens, verbenSeinHaben, verbenMitVokalwechsel, modalverben, trennbareVerben, imperativ, wFragen, jaNeinFragen, wortpositionImSatz, satzklammer, nomenPlural, negation, kasusAkkusativ, kasusDativ];
 
 export function getAllTopics(): GrammarTopic[] {
   return [...TOPICS].sort((a, b) => a.order - b.order);
