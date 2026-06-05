@@ -18,7 +18,8 @@ describe("content topics", () => {
   });
 
   it("getTopic mengembalikan topik sesuai id, atau undefined", () => {
-    expect(getTopic("artikel-nominativ")?.id).toBe("artikel-nominativ");
+    const first = getAllTopics()[0];
+    expect(getTopic(first.id)?.id).toBe(first.id);
     expect(getTopic("tidak-ada")).toBeUndefined();
   });
 });

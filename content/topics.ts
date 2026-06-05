@@ -1,7 +1,7 @@
 import type { GrammarTopic } from "@/content/types";
-import { artikelNominativ } from "@/content/topics/artikel-nominativ";
+import { personalpronomen } from "@/content/topics/personalpronomen";
 
-const TOPICS: GrammarTopic[] = [artikelNominativ];
+const TOPICS: GrammarTopic[] = [personalpronomen];
 
 export function getAllTopics(): GrammarTopic[] {
   return [...TOPICS].sort((a, b) => a.order - b.order);
