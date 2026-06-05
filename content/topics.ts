@@ -9,8 +9,9 @@ import { imperativ } from "@/content/topics/imperativ";
 import { wFragen } from "@/content/topics/w-fragen";
 import { jaNeinFragen } from "@/content/topics/ja-nein-fragen";
 import { wortpositionImSatz } from "@/content/topics/wortposition-im-satz";
+import { satzklammer } from "@/content/topics/satzklammer";
 
-const TOPICS: GrammarTopic[] = [personalpronomen, konjugationPraesens, verbenSeinHaben, verbenMitVokalwechsel, modalverben, trennbareVerben, imperativ, wFragen, jaNeinFragen, wortpositionImSatz];
+const TOPICS: GrammarTopic[] = [personalpronomen, konjugationPraesens, verbenSeinHaben, verbenMitVokalwechsel, modalverben, trennbareVerben, imperativ, wFragen, jaNeinFragen, wortpositionImSatz, satzklammer];
 
 export function getAllTopics(): GrammarTopic[] {
   return [...TOPICS].sort((a, b) => a.order - b.order);
