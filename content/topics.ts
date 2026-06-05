@@ -15,8 +15,9 @@ import { negation } from "@/content/topics/negation";
 import { kasusAkkusativ } from "@/content/topics/kasus-akkusativ";
 import { kasusDativ } from "@/content/topics/kasus-dativ";
 import { possessivartikel } from "@/content/topics/possessivartikel";
+import { artikelInterrogativDemonstrativ } from "@/content/topics/artikel-interrogativ-demonstrativ";
 
-const TOPICS: GrammarTopic[] = [personalpronomen, konjugationPraesens, verbenSeinHaben, verbenMitVokalwechsel, modalverben, trennbareVerben, imperativ, wFragen, jaNeinFragen, wortpositionImSatz, satzklammer, nomenPlural, negation, kasusAkkusativ, kasusDativ, possessivartikel];
+const TOPICS: GrammarTopic[] = [personalpronomen, konjugationPraesens, verbenSeinHaben, verbenMitVokalwechsel, modalverben, trennbareVerben, imperativ, wFragen, jaNeinFragen, wortpositionImSatz, satzklammer, nomenPlural, negation, kasusAkkusativ, kasusDativ, possessivartikel, artikelInterrogativDemonstrativ];
 
 export function getAllTopics(): GrammarTopic[] {
   return [...TOPICS].sort((a, b) => a.order - b.order);
