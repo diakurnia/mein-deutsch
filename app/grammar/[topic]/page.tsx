@@ -5,6 +5,7 @@ import { getTopic, getAllTopics } from "@/content/topics";
 import { statusFor, type ProgressRow } from "@/lib/progress";
 import { SpeakButton } from "@/components/SpeakButton";
 import { Collapsible } from "@/components/Collapsible";
+import { RichText } from "@/components/RichText";
 import { MiniExercise } from "@/components/MiniExercise";
 import { MarkCompleteButton } from "@/components/MarkCompleteButton";
 
@@ -89,7 +90,7 @@ export default async function TopicPage({
       </Section>
 
       <Section label="📌 Catatan Penting">
-        <p className="leading-relaxed text-slate-700">{topic.notes}</p>
+        <RichText text={topic.notes} />
       </Section>
 
       <Section label="✏️ Mini-Latihan">
