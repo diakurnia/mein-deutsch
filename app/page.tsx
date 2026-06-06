@@ -53,7 +53,7 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link
-              href="/grammar"
+              href="/dashboard"
               className="rounded-xl bg-teal-brand px-8 py-3 font-bold text-teal-deep shadow-md transition hover:brightness-105"
             >
               Mulai Belajar →

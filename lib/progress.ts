@@ -29,6 +29,16 @@ export function weeklyActivity(rows: ProgressRow[]): number[] {
 }
 
 /**
+ * Berapa topik yang diselesaikan HARI INI (berdasarkan completed_at).
+ */
+export function completedTodayCount(rows: ProgressRow[]): number {
+  const today = new Date().toISOString().slice(0, 10);
+  return rows.filter(
+    (r) => r.completed_at && r.completed_at.slice(0, 10) === today
+  ).length;
+}
+
+/**
  * Hitung streak: berapa hari berturut-turut (ke belakang dari hari ini)
  * ada setidaknya 1 topik yang diselesaikan.
  */

@@ -3,7 +3,6 @@ import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getTopic, getAllTopics } from "@/content/topics";
 import { statusFor, summarize, type ProgressRow } from "@/lib/progress";
-import { TopNav } from "@/components/TopNav";
 import { TopicSidebar, type SidebarItem } from "@/components/TopicSidebar";
 import { SpeakButton } from "@/components/SpeakButton";
 import { Collapsible } from "@/components/Collapsible";
@@ -57,9 +56,7 @@ export default async function TopicPage({
 
   return (
     <div className="min-h-screen">
-      <TopNav activeSection="grammar" />
-
-      <div className="mx-auto flex max-w-5xl">
+      <div className="flex">
         <TopicSidebar
           items={sidebarItems}
           activeId={topic.id}

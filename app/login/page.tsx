@@ -22,14 +22,14 @@ export default function LoginPage() {
       if (mode === "in") {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) { setError(error.message); return; }
-        router.push("/grammar");
+        router.push("/dashboard");
         router.refresh();
       } else {
         const { data, error } = await supabase.auth.signUp({ email, password });
         if (error) { setError(error.message); return; }
         if (data.session) {
           // email confirmation dimatikan — langsung masuk
-          router.push("/grammar");
+          router.push("/dashboard");
           router.refresh();
         } else {
           // email confirmation aktif — minta cek email

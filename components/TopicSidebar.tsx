@@ -52,7 +52,7 @@ export function TopicSidebar({
       <aside
         className={`${
           open ? "translate-x-0" : "-translate-x-full"
-        } fixed left-0 top-0 z-40 flex h-full w-64 flex-col border-r border-teal-soft bg-white transition-transform lg:sticky lg:top-12 lg:z-0 lg:h-[calc(100vh-3rem)] lg:translate-x-0`}
+        } fixed left-0 top-0 z-40 flex h-full w-64 flex-col border-r border-teal-soft bg-white transition-transform lg:sticky lg:top-0 lg:z-0 lg:h-screen lg:translate-x-0`}
       >
         <div className="flex items-center justify-between border-b border-teal-soft/70 px-3 py-2.5">
           <h4 className="text-[11px] font-bold uppercase tracking-wide text-slate-400">

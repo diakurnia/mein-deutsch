@@ -38,7 +38,7 @@ export function MarkCompleteButton({
       setError("Gagal menyimpan, coba lagi.");
       return;
     }
-    router.push("/grammar");
+    router.push("/dashboard");
     router.refresh();
   }
 
