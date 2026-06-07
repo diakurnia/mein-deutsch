@@ -22,7 +22,7 @@ export function BasicsGrid({ groups }: { groups: BasicsGroup[] }) {
                     <span className="block truncate text-[10px] text-teal-deep">{item.hint}</span>
                   )}
                 </div>
-                <SpeakButton text={item.de} />
+                <SpeakButton text={item.hint ?? item.de} />
               </div>
             ))}
           </div>
