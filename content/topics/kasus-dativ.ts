@@ -22,12 +22,43 @@ export const kasusDativ: GrammarTopic = {
         ["Negasi (kein)", "keinem", "keinem", "keiner", "keinen (+n)"],
       ],
     },
+    {
+      caption: "Kata kerja yang selalu memakai Dativ (Wem?)",
+      headers: ["Kata kerja", "Arti", "Contoh kalimat"],
+      rows: [
+        ["helfen", "membantu", "Ich helfe dem Kind."],
+        ["danken", "berterima kasih", "Er dankt der Lehrerin."],
+        ["gefallen", "disukai / berkenan", "Das Lied gefällt dem Mädchen."],
+        ["gehören", "milik / kepunyaan", "Das Buch gehört dem Lehrer."],
+        ["geben", "memberi (kpd seseorang)", "Ich gebe dem Mann ein Buch."],
+        ["zeigen", "menunjukkan", "Er zeigt dem Kind den Weg."],
+        ["schenken", "menghadiahi", "Sie schenkt der Freundin Blumen."],
+        ["schreiben", "menulis (kpd seseorang)", "Ich schreibe dem Freund eine E-Mail."],
+        ["sagen", "mengatakan (kpd seseorang)", "Er sagt dem Chef die Wahrheit."],
+        ["empfehlen", "merekomendasikan", "Der Arzt empfiehlt dem Patienten Ruhe."],
+      ],
+    },
+    {
+      caption: "Kontraksi preposisi + Dativ artikel",
+      headers: ["Asli", "Kontraksi", "Contoh"],
+      rows: [
+        ["bei + dem", "beim", "Ich bin beim Arzt."],
+        ["von + dem", "vom", "Das ist nicht weit vom Bahnhof."],
+        ["zu + dem", "zum", "Ich fahre zum Supermarkt."],
+        ["zu + der", "zur", "Sie geht zur Schule."],
+        ["an + dem", "am", "Er arbeitet am Computer."],
+        ["in + dem", "im", "Wir sind im Restaurant."],
+      ],
+    },
   ],
   examples: [
     { de: "Ich helfe dem Mann.", id: "Saya membantu laki-laki itu. (der Mann → dem Mann)" },
-    { de: "Das Kleid gefällt der Frau.", id: "Gaun itu berkenan bagi wanita tersebut. (die Frau → der Frau)" },
-    { de: "Ich fahre mit dem Auto.", id: "Saya pergi dengan mobil. (das Auto → dem Auto)" },
-    { de: "Ich danke den Kindern.", id: "Saya berterima kasih kepada anak-anak. (die Kinder → den Kindern)" },
+    { de: "Das Lied gefällt der Frau sehr gut.", id: "Lagu itu sangat disukai wanita tersebut. (die Frau → der Frau)" },
+    { de: "Ich fahre mit dem Bus zum Bahnhof.", id: "Saya naik bus ke stasiun. (mit + Dativ, zu + Dativ)" },
+    { de: "Ich danke den Kindern für die Hilfe.", id: "Saya berterima kasih kepada anak-anak atas bantuannya." },
+    { de: "Kannst du dem Mädchen helfen?", id: "Bisakah kamu membantu anak perempuan itu?" },
+    { de: "Er schenkt der Mutter Blumen.", id: "Dia menghadiahi ibunya bunga." },
+    { de: "Wir gehen jetzt zum Supermarkt.", id: "Kami sekarang pergi ke supermarket. (zu + dem = zum)" },
   ],
   exercises: [
     {
@@ -44,6 +75,16 @@ export const kasusDativ: GrammarTopic = {
       question: "Ich spreche mit ___ Leuten. (die Leute — plural)",
       options: ["der", "dem", "den"],
       answer: "den",
+    },
+    {
+      question: "Das Buch gehört ___ Kind. (das Kind — netral)",
+      options: ["der", "den", "dem"],
+      answer: "dem",
+    },
+    {
+      question: "'zu + dem' menjadi kontraksi…",
+      options: ["zur", "zum", "beim"],
+      answer: "zum",
     },
   ],
 };

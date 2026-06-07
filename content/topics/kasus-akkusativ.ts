@@ -22,12 +22,33 @@ export const kasusAkkusativ: GrammarTopic = {
         ["Negasi (kein)", "keinen ⚡", "kein", "keine", "keine"],
       ],
     },
+    {
+      caption: "Kata kerja yang selalu memakai Akkusativ (Wen? / Was?)",
+      headers: ["Kata kerja", "Arti", "Contoh kalimat"],
+      rows: [
+        ["haben", "mempunyai", "Ich habe einen Bruder."],
+        ["brauchen", "membutuhkan", "Ich brauche einen Arzt."],
+        ["kaufen", "membeli", "Er kauft einen Computer."],
+        ["suchen", "mencari", "Wir suchen das Hotel."],
+        ["sehen", "melihat", "Siehst du den Mann dort?"],
+        ["essen", "makan", "Wir essen einen Kuchen."],
+        ["trinken", "minum", "Er trinkt einen Saft."],
+        ["nehmen", "mengambil", "Ich nehme den Bus."],
+        ["besuchen", "mengunjungi", "Sie besucht eine Freundin."],
+        ["bestellen", "memesan", "Ich bestelle einen Kaffee."],
+        ["finden", "menemukan", "Ich finde den Schlüssel nicht."],
+        ["kennen", "mengenal", "Kennst du den Mann?"],
+      ],
+    },
   ],
   examples: [
     { de: "Ich habe einen Hund.", id: "Saya mempunyai seekor anjing. (der Hund → einen Hund)" },
     { de: "Er trinkt einen Saft.", id: "Dia meminum jus. (der Saft → einen Saft)" },
     { de: "Wir suchen das Hotel.", id: "Kami mencari hotel tersebut. (das Hotel → tetap das Hotel)" },
     { de: "Hast du einen Kuli?", id: "Apakah kamu punya pulpen? (der Kuli → einen Kuli)" },
+    { de: "Ich bestelle eine Cola, bitte.", id: "Saya pesan satu cola, tolong. (die Cola → eine Cola)" },
+    { de: "Siehst du den Mann da drüben?", id: "Apakah kamu melihat pria di sana? (der Mann → den Mann)" },
+    { de: "Ich nehme den Zug um neun Uhr.", id: "Saya naik kereta pukul sembilan." },
   ],
   exercises: [
     {
@@ -44,6 +65,16 @@ export const kasusAkkusativ: GrammarTopic = {
       question: "Ich esse ___ Pizza zum Mittagessen. (die Pizza — feminin)",
       options: ["ein", "einen", "eine"],
       answer: "eine",
+    },
+    {
+      question: "Er kauft ___ Computer. (der Computer — maskulin)",
+      options: ["ein", "einen", "einem"],
+      answer: "einen",
+    },
+    {
+      question: "Siehst du ___ Mann dort? (der Mann — maskulin)",
+      options: ["der", "den", "dem"],
+      answer: "den",
     },
   ],
 };

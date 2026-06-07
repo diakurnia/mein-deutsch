@@ -58,6 +58,11 @@ export const nebensatz: GrammarTopic = {
     { de: "Wenn das Wetter schön ist, gehen wir spazieren.", id: "Jika cuacanya bagus, kita jalan-jalan." },
     { de: "Er kommt nicht, weil er krank ist.", id: "Dia tidak datang karena dia sakit." },
     { de: "Ich bin froh, dass du da bist.", id: "Saya senang bahwa kamu ada di sini." },
+    { de: "Weil ich müde bin, gehe ich früh schlafen.", id: "Karena saya lelah, saya tidur lebih awal. (Nebensatz di depan → inversion)" },
+    { de: "Ich esse nicht, weil ich keinen Hunger habe.", id: "Saya tidak makan karena tidak lapar." },
+    { de: "Ruf mich an, wenn du ankommst!", id: "Telepon aku ketika kamu tiba!" },
+    { de: "Ich weiß, dass er Deutsch spricht.", id: "Saya tahu bahwa dia berbicara bahasa Jerman." },
+    { de: "Wenn ich Zeit habe, lese ich gern.", id: "Jika saya punya waktu, saya suka membaca." },
   ],
   exercises: [
     {
@@ -83,6 +88,16 @@ export const nebensatz: GrammarTopic = {
         "Ich bleibe zu Hause, weil bin ich müde.",
       ],
       answer: "Ich bleibe zu Hause, weil ich müde bin.",
+    },
+    {
+      question: "'___ ich krank bin, bleibe ich zu Hause.' — setelah koma, kalimat utama dimulai dengan…",
+      options: ["ich bleibe", "bleibe ich", "ich bin geblieben"],
+      answer: "bleibe ich",
+    },
+    {
+      question: "Dengan Modalverb di Nebensatz: '…, weil ich früh aufstehen ___.' (müssen)",
+      options: ["muss", "müssen", "müsste"],
+      answer: "muss",
     },
   ],
 };
