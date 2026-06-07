@@ -96,7 +96,6 @@ export default async function GrammarDashboard() {
               🔥 Mulai streak hari ini!
             </span>
           )}
-          <span className="text-lg text-slate-300">🔔</span>
         </div>
       </div>
 
