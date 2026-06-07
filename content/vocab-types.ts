@@ -40,7 +40,7 @@ export type VocabExample = {
   de: string;   // gunakan **kata** untuk highlight, e.g. "Ich esse **das Brot**."
                 // Komponen render akan parse **...** dan warnai sesuai artikel
                 // yang terdeteksi (der/die/das) di dalam tanda **.
-  id: string;
+  id: string;   // terjemahan bahasa Indonesia dari kalimat de
 };
 
 export type VocabTopic = {
