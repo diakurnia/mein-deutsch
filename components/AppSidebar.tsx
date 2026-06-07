@@ -25,12 +25,12 @@ export function AppSidebar({
   const pathname = usePathname();
 
   const NAV: NavItem[] = [
-    { id: "dashboard", label: "Dashboard", icon: "🏠", href: "/dashboard", available: true },
+    { id: "dashboard", label: "Übersicht", icon: "🏠", href: "/dashboard", available: true },
     { id: "grundlagen", label: "Grundlagen", icon: "🧱", href: `/grundlagen/${firstBasicsId}`, available: true },
-    { id: "grammar", label: "Grammar", icon: "📐", href: `/grammar/${firstTopicId}`, available: true },
-    { id: "vocabulary", label: "Vocabulary", icon: "📚", href: null, available: false },
-    { id: "listening", label: "Listening", icon: "🎧", href: null, available: false },
-    { id: "review", label: "Review & Quiz", icon: "✅", href: null, available: false },
+    { id: "grammar", label: "Grammatik", icon: "📐", href: `/grammar/${firstTopicId}`, available: true },
+    { id: "vocabulary", label: "Wortschatz", icon: "📚", href: null, available: false },
+    { id: "listening", label: "Hören", icon: "🎧", href: null, available: false },
+    { id: "review", label: "Übungen & Quiz", icon: "✅", href: null, available: false },
   ];
 
   function isActive(id: string): boolean {
