@@ -23,10 +23,10 @@ describe('getAvailableVocab', () => {
     available.forEach((t) => expect(t.available).toBe(true));
   });
 
-  it('familie tersedia, essen-trinken tidak', () => {
+  it('famille dan essen-trinken tersedia', () => {
     const ids = getAvailableVocab().map((t) => t.id);
     expect(ids).toContain('familie');
-    expect(ids).not.toContain('essen-trinken');
+    expect(ids).toContain('essen-trinken');
   });
 });
 
@@ -37,8 +37,10 @@ describe('getVocab', () => {
     expect(t!.id).toBe('familie');
   });
 
-  it('mengembalikan undefined untuk tema terkunci', () => {
-    expect(getVocab('essen-trinken')).toBeUndefined();
+  it('mengembalikan tema essen-trinken yang sudah aktif', () => {
+    const t = getVocab('essen-trinken');
+    expect(t).toBeDefined();
+    expect(t!.id).toBe('essen-trinken');
   });
 
   it('mengembalikan undefined untuk id tidak ada', () => {
