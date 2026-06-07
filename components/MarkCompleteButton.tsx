@@ -4,6 +4,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
+// Regex whitelist: hanya slug valid (huruf kecil, angka, tanda hubung)
+const VALID_TOPIC_ID = /^[a-z0-9-]+$/;
+
 export function MarkCompleteButton({
   topicId,
   done,
@@ -16,6 +19,12 @@ export function MarkCompleteButton({
   const [error, setError] = useState<string | null>(null);
 
   async function mark() {
+    // Validasi topic_id sebelum kirim ke Supabase
+    if (!VALID_TOPIC_ID.test(topicId)) {
+      setError("ID topik tidak valid.");
+      return;
+    }
+
     setLoading(true);
     setError(null);
     const supabase = createClient();

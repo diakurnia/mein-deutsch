@@ -17,3 +17,5 @@ create policy "own progress - insert" on public.user_progress
   for insert with check (auth.uid() = user_id);
 create policy "own progress - update" on public.user_progress
   for update using (auth.uid() = user_id);
+create policy "own progress - delete" on public.user_progress
+  for delete using (auth.uid() = user_id);
