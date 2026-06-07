@@ -52,8 +52,23 @@ export default async function GrammarDashboard() {
     topics.find((t) => statusFor(rows, t.id) !== "selesai") ??
     topics[topics.length - 1];
 
+  // Hero logic: tunjuk Grundlagen jika user belum pernah mulai grammar
+  const grammarStarted = rows.some((r) => topics.some((t) => t.id === r.topic_id));
+  const showGrundlagenHero = !grammarStarted;
+
+  const heroTitle = showGrundlagenHero ? continueBasics.title : continueTopic.title;
+  const heroHref = showGrundlagenHero
+    ? `/grundlagen/${continueBasics.id}`
+    : `/grammar/${continueTopic.id}`;
+  const heroOrder = showGrundlagenHero ? continueBasics.order : continueTopic.order;
+  const heroTotal = showGrundlagenHero ? basicsTopics.length : topics.length;
+  const heroPilar = showGrundlagenHero ? "Grundlagen" : "Grammatik";
+
   // Deskripsi singkat untuk hero (strip markdown, potong)
-  const heroDesc = continueTopic.explanation
+  const heroSourceText = showGrundlagenHero
+    ? continueBasics.intro
+    : continueTopic.explanation;
+  const heroDesc = heroSourceText
     .split("\n\n")[0]
     .replace(/\*\*/g, "")
     .replace(/\*/g, "")
@@ -92,37 +107,31 @@ export default async function GrammarDashboard() {
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-bg to-teal-soft p-6">
             <div className="relative z-10 max-w-md">
               <p className="text-xs font-bold uppercase tracking-wide text-teal-deep">
-                Lanjutkan Belajar
+                {showGrundlagenHero ? "Mulai dari Sini" : "Lanjutkan Belajar"} · {heroPilar}
               </p>
               <h2 className="mt-1 text-2xl font-extrabold text-slate-900">
-                {continueTopic.title}
+                {heroTitle}
               </h2>
               <p className="mt-2 text-sm text-slate-500">{heroDesc}…</p>
 
               <div className="mt-3 flex flex-wrap gap-4 text-xs text-slate-500">
-                <span>📖 Topik {continueTopic.order} dari {topics.length}</span>
+                <span>📖 Topik {heroOrder} dari {heroTotal}</span>
                 <span>⏱️ Estimasi 5 menit</span>
               </div>
 
-              <div className="mt-4 flex flex-wrap items-center gap-3">
+              <div className="mt-4">
                 <Link
-                  href={`/grammar/${continueTopic.id}`}
-                  className="rounded-xl bg-teal-deep px-5 py-2.5 text-sm font-bold text-white shadow transition hover:brightness-110"
+                  href={heroHref}
+                  className="inline-block rounded-xl bg-teal-deep px-5 py-2.5 text-sm font-bold text-white shadow transition hover:brightness-110"
                 >
-                  Lanjutkan Belajar →
-                </Link>
-                <Link
-                  href={`/grammar/${continueTopic.id}`}
-                  className="text-sm font-semibold text-teal-deep hover:underline"
-                >
-                  Lihat detail topik
+                  {showGrundlagenHero ? "Mulai Belajar →" : "Lanjutkan Belajar →"}
                 </Link>
               </div>
             </div>
             {/* Ilustrasi */}
             <div className="pointer-events-none absolute right-4 top-1/2 hidden -translate-y-1/2 sm:block">
               <div className="flex h-28 w-28 items-center justify-center rounded-3xl bg-white/60 text-6xl shadow-inner">
-                📖
+                {showGrundlagenHero ? "🧱" : "📖"}
               </div>
               <span className="absolute -right-1 -top-1 text-3xl">🇩🇪</span>
             </div>
@@ -205,39 +214,42 @@ export default async function GrammarDashboard() {
 
         {/* ─── Kolom kanan (1/3) ─── */}
         <div className="flex flex-col gap-4">
-          <StatCard
-            value={String(overall.completed)}
-            label="Topik Selesai"
-            sub="Terus tingkatkan!"
-            icon="📘"
-          />
-          <StatCard
-            value={String(overall.total)}
-            label="Total Topik"
-            sub="Level A1 · Dasar"
-            icon="📄"
-          />
+          {/* Progress Ringkasan — per pilar */}
           <div className="rounded-2xl border border-teal-soft bg-white p-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-2xl font-extrabold text-teal-deep">
-                  {overall.percent}%
-                </div>
-                <p className="text-sm font-semibold text-slate-700">
-                  Progress Keseluruhan
-                </p>
-                <p className="text-[11px] text-slate-400">
-                  {overall.completed} dari {overall.total} topik selesai
-                </p>
-              </div>
-              <span className="text-2xl">📊</span>
+            <div className="mb-3 flex items-center justify-between">
+              <p className="text-sm font-bold text-slate-700">📊 Ringkasan Progress</p>
+              <span className="text-lg font-extrabold text-teal-deep">{overall.percent}%</span>
             </div>
-            <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-teal-soft">
+
+            {/* Overall bar */}
+            <div className="mb-4 h-2 overflow-hidden rounded-full bg-teal-soft">
               <div
-                className="h-full rounded-full bg-teal-brand"
+                className="h-full rounded-full bg-teal-brand transition-all"
                 style={{ width: `${overall.percent}%` }}
               />
             </div>
+
+            {/* Per pilar */}
+            <div className="flex flex-col gap-3">
+              <PilarProgress
+                icon="🧱"
+                label="Grundlagen"
+                completed={basicsSummary.completed}
+                total={basicsSummary.total}
+                percent={basicsSummary.percent}
+              />
+              <PilarProgress
+                icon="📐"
+                label="Grammatik"
+                completed={grammarSummary.completed}
+                total={grammarSummary.total}
+                percent={grammarSummary.percent}
+              />
+            </div>
+
+            <p className="mt-3 text-center text-[11px] text-slate-400">
+              {overall.completed} dari {overall.total} topik selesai
+            </p>
           </div>
 
           <WortDesTages />
@@ -248,26 +260,32 @@ export default async function GrammarDashboard() {
   );
 }
 
-function StatCard({
-  value,
-  label,
-  sub,
+function PilarProgress({
   icon,
+  label,
+  completed,
+  total,
+  percent,
 }: {
-  value: string;
-  label: string;
-  sub: string;
   icon: string;
+  label: string;
+  completed: number;
+  total: number;
+  percent: number;
 }) {
   return (
-    <div className="flex items-center gap-3 rounded-2xl border border-teal-soft bg-white p-4">
-      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-soft text-xl">
-        {icon}
+    <div>
+      <div className="mb-1 flex items-center justify-between">
+        <span className="flex items-center gap-1.5 text-xs font-semibold text-slate-700">
+          <span>{icon}</span> {label}
+        </span>
+        <span className="text-[11px] text-slate-400">{completed}/{total}</span>
       </div>
-      <div>
-        <div className="text-2xl font-extrabold text-slate-900">{value}</div>
-        <p className="text-sm font-semibold text-slate-700">{label}</p>
-        <p className="text-[11px] text-slate-400">{sub}</p>
+      <div className="h-1.5 overflow-hidden rounded-full bg-teal-soft">
+        <div
+          className="h-full rounded-full bg-teal-brand transition-all"
+          style={{ width: `${percent}%` }}
+        />
       </div>
     </div>
   );
