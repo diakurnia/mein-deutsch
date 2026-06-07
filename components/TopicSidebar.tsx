@@ -9,6 +9,7 @@ export type SidebarItem = {
   title: string;
   order: number;
   status: ProgressStatus;
+  locked?: boolean;
 };
 
 const BADGE: Record<ProgressStatus, string> = {
@@ -74,6 +75,18 @@ export function TopicSidebar({
         <nav className="flex-1 overflow-y-auto py-1">
           {items.map((it) => {
             const isActive = it.id === activeId;
+            if (it.locked) {
+              return (
+                <span
+                  key={it.id}
+                  className="flex cursor-default items-center gap-2 border-l-[3px] border-transparent px-3 py-2 text-xs text-slate-300"
+                >
+                  <span className="w-4 shrink-0 text-[10px] text-slate-300">{it.order}</span>
+                  <span className="flex-1 leading-tight">{it.title}</span>
+                  <span className="shrink-0 text-[11px]">🔒</span>
+                </span>
+              );
+            }
             return (
               <Link
                 key={it.id}
