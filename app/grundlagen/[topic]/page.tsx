@@ -57,6 +57,8 @@ export default async function BasicsTopicPage({
           activeId={topic.id}
           completed={summary.completed}
           total={summary.total}
+          basePath="/grundlagen"
+          sectionLabel="Grundlagen A1"
         />
 
         <main className="mx-auto w-full max-w-xl px-5 py-6">
