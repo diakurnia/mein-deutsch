@@ -42,22 +42,22 @@ export const familie: VocabTopic = {
 
   exercises: [
     {
-      question: '„___ Kind spielt im Garten." — Pilih artikel yang tepat:',
+      question: '___ Kind spielt im Garten. — Pilih artikel yang tepat:',
       options: ['der', 'die', 'das'],
       answer: 'das',
     },
     {
-      question: '„___ Frau heißt Maria." — Pilih artikel yang tepat:',
+      question: '___ Frau heißt Maria. — Pilih artikel yang tepat:',
       options: ['Der', 'Die', 'Das'],
       answer: 'Die',
     },
     {
-      question: 'Apa bentuk plural dari „die Mutter"?',
+      question: 'Apa bentuk plural dari "die Mutter"?',
       options: ['die Mutter', 'die Mütter', 'die Muttern'],
       answer: 'die Mütter',
     },
     {
-      question: 'Apa arti kata kerja „wohnen"?',
+      question: 'Apa arti kata kerja "wohnen"?',
       options: ['bekerja', 'tinggal', 'makan'],
       answer: 'tinggal',
     },

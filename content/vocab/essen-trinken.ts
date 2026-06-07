@@ -41,22 +41,22 @@ export const essenTrinken: VocabTopic = {
 
   exercises: [
     {
-      question: '„___ Ei ist frisch." — Pilih artikel yang tepat:',
+      question: '___ Ei ist frisch. — Pilih artikel yang tepat:',
       options: ['der', 'die', 'das'],
       answer: 'das',
     },
     {
-      question: '„___ Suppe ist heiß." — Pilih artikel yang tepat:',
+      question: '___ Suppe ist heiß. — Pilih artikel yang tepat:',
       options: ['Der', 'Die', 'Das'],
       answer: 'Die',
     },
     {
-      question: 'Apa bentuk plural dari „der Apfel"?',
+      question: 'Apa bentuk plural dari "der Apfel"?',
       options: ['die Apfels', 'die Äpfel', 'die Apfeln'],
       answer: 'die Äpfel',
     },
     {
-      question: 'Apa arti kata „lecker"?',
+      question: 'Apa arti kata "lecker"?',
       options: ['mahal', 'cepat', 'enak'],
       answer: 'enak',
     },
