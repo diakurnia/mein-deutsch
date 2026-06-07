@@ -4,7 +4,7 @@ export const kasusAkkusativ: GrammarTopic = {
   id: "kasus-akkusativ",
   title: "Kasus Akkusativ",
   level: "A1",
-  order: 14,
+  order: 16,
   icon: "🎯",
   explanation:
     "**Kasus Akkusativ** digunakan untuk menunjukkan **objek langsung** dalam sebuah kalimat, yaitu orang atau benda yang menerima tindakan dari kata kerja. Dalam struktur kalimat dasar, biasanya ada subjek (**Nominativ**) yang melakukan aktivitas dan objek (**Akkusativ**) yang menjadi sasarannya.\n\n" +

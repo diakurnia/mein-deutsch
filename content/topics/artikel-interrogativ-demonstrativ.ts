@@ -4,7 +4,7 @@ export const artikelInterrogativDemonstrativ: GrammarTopic = {
   id: "artikel-interrogativ-demonstratif",
   title: "Artikel: Interogatif dan Demonstratif (welcher? - dieser!)",
   level: "A1",
-  order: 17,
+  order: 21,
   icon: "👉",
   explanation:
     "**Artikel Interogatif** (*welcher*) digunakan untuk menanyakan pilihan spesifik dari sekelompok benda atau orang — artinya \"yang mana?\". Sebagai pasangannya, **Artikel Demonstratif** (*dieser*) digunakan untuk menunjuk benda atau orang tertentu — artinya \"ini\" atau \"yang ini\".\n\n" +

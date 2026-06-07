@@ -4,7 +4,7 @@ export const nomenPlural: GrammarTopic = {
   id: "nomen-plural",
   title: "Nomen: Plural",
   level: "A1",
-  order: 12,
+  order: 9,
   icon: "📚",
   explanation:
     "Dalam bahasa Jerman, pembentukan kata benda jamak (**Plural**) tidak memiliki satu aturan tunggal yang berlaku untuk semua kata. Setiap kata benda memiliki bentuk jamak spesifik yang perlu dihafalkan bersama bentuk tunggalnya karena perubahannya bisa sangat bervariasi.\n\n" +

@@ -4,7 +4,7 @@ export const verbenSeinHaben: GrammarTopic = {
   id: "verben-sein-haben-besonder-verben",
   title: "Verben 'sein', 'haben', dan Kata Kerja Khusus",
   level: "A1",
-  order: 3,
+  order: 4,
   icon: "🌟",
   explanation:
     "Kata kerja **sein** (to be) dan **haben** (to have) adalah pondasi paling dasar dalam bahasa Jerman. Keduanya merupakan kata kerja tidak beraturan yang konjugasinya harus dihafalkan karena sering digunakan sebagai kata kerja utama maupun kata kerja bantu di level yang lebih tinggi. **Sein** digunakan untuk menyatakan identitas, profesi, atau kondisi, sedangkan **haben** menyatakan kepemilikan atau hubungan.\n\n" +

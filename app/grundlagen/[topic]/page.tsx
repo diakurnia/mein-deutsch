@@ -1,26 +1,25 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { getTopic, getAllTopics } from "@/content/topics";
+import { getBasic, getAllBasics } from "@/content/basics";
 import { statusFor, summarizeFor, type ProgressRow } from "@/lib/progress";
 import { TopicSidebar, type SidebarItem } from "@/components/TopicSidebar";
-import { SpeakButton } from "@/components/SpeakButton";
-import { Collapsible } from "@/components/Collapsible";
 import { RichText } from "@/components/RichText";
+import { BasicsGrid } from "@/components/BasicsGrid";
 import { MiniExercise } from "@/components/MiniExercise";
 import { MarkCompleteButton } from "@/components/MarkCompleteButton";
 
 export function generateStaticParams() {
-  return getAllTopics().map((t) => ({ topic: t.id }));
+  return getAllBasics().map((t) => ({ topic: t.id }));
 }
 
-export default async function TopicPage({
+export default async function BasicsTopicPage({
   params,
 }: {
   params: Promise<{ topic: string }>;
 }) {
   const { topic: topicId } = await params;
-  const topic = getTopic(topicId);
+  const topic = getBasic(topicId);
   if (!topic) notFound();
 
   const supabase = await createClient();
@@ -35,11 +34,10 @@ export default async function TopicPage({
     .eq("user_id", user.id);
   const rows = (data ?? []) as ProgressRow[];
 
-  const topics = getAllTopics();
+  const topics = getAllBasics();
   const summary = summarizeFor(rows, topics.map((t) => t.id));
   const done = statusFor(rows, topic.id) === "selesai";
 
-  // Item untuk sidebar
   const sidebarItems: SidebarItem[] = topics.map((t) => ({
     id: t.id,
     title: t.title,
@@ -47,12 +45,9 @@ export default async function TopicPage({
     status: statusFor(rows, t.id),
   }));
 
-  // Prev / Next berdasarkan urutan
   const idx = topics.findIndex((t) => t.id === topic.id);
   const prev = idx > 0 ? topics[idx - 1] : null;
   const next = idx < topics.length - 1 ? topics[idx + 1] : null;
-
-  const firstPara = topic.explanation.split("\n\n")[0];
 
   return (
     <div className="min-h-screen">
@@ -62,18 +57,19 @@ export default async function TopicPage({
           activeId={topic.id}
           completed={summary.completed}
           total={summary.total}
+          basePath="/grundlagen"
+          sectionLabel="Grundlagen A1"
         />
 
         <main className="mx-auto w-full max-w-xl px-5 py-6">
-          {/* Navigasi atas */}
           <div className="mb-3 flex items-center justify-between">
-            <Link href="/grammar" className="text-sm font-semibold text-teal-deep">
+            <Link href="/dashboard" className="text-sm font-semibold text-teal-deep">
               ← Dashboard
             </Link>
             <div className="flex gap-1.5">
               {prev ? (
                 <Link
-                  href={`/grammar/${prev.id}`}
+                  href={`/grundlagen/${prev.id}`}
                   className="rounded-lg bg-teal-soft px-2.5 py-1 text-xs font-semibold text-teal-deep transition hover:brightness-95"
                 >
                   ← Sebelumnya
@@ -85,7 +81,7 @@ export default async function TopicPage({
               )}
               {next ? (
                 <Link
-                  href={`/grammar/${next.id}`}
+                  href={`/grundlagen/${next.id}`}
                   className="rounded-lg bg-teal-soft px-2.5 py-1 text-xs font-semibold text-teal-deep transition hover:brightness-95"
                 >
                   Berikutnya →
@@ -103,52 +99,11 @@ export default async function TopicPage({
           </h1>
 
           <Section label="📖 Penjelasan">
-            <Collapsible preview={firstPara} full={topic.explanation} />
+            <RichText text={topic.intro} />
           </Section>
 
-          {topic.tables.map((tbl, i) => (
-            <Section key={i} label={`📊 ${tbl.caption}`}>
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse text-sm">
-                  <thead>
-                    <tr>
-                      {tbl.headers.map((h) => (
-                        <th key={h} className="rounded bg-teal-soft p-1.5 text-teal-deep">
-                          {h}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {tbl.rows.map((row, ri) => (
-                      <tr key={ri}>
-                        {row.map((cell, ci) => (
-                          <td key={ci} className="border-b border-slate-100 p-1.5 text-center">
-                            {cell}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </Section>
-          ))}
-
-          <Section label="💬 Contoh Kalimat">
-            {topic.examples.map((ex, i) => (
-              <div key={i} className="mt-1 flex items-center justify-between gap-2">
-                <div className="text-sm">
-                  <b className="text-slate-900">{ex.de}</b>
-                  <span className="block text-xs text-slate-400">{ex.id}</span>
-                </div>
-                <SpeakButton text={ex.de} />
-              </div>
-            ))}
-          </Section>
-
-          <Section label="📌 Catatan Penting">
-            <RichText text={topic.notes} />
+          <Section label="📋 Daftar">
+            <BasicsGrid groups={topic.groups} />
           </Section>
 
           <Section label="✏️ Mini-Latihan">
@@ -157,10 +112,9 @@ export default async function TopicPage({
 
           <MarkCompleteButton topicId={topic.id} done={done} />
 
-          {/* Navigasi bawah */}
           {next && (
             <Link
-              href={`/grammar/${next.id}`}
+              href={`/grundlagen/${next.id}`}
               className="mt-4 block rounded-xl border border-teal-soft bg-white p-3 text-center text-sm font-semibold text-teal-deep transition hover:bg-teal-bg"
             >
               Topik berikutnya: {next.icon} {next.title} →

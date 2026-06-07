@@ -4,7 +4,7 @@ export const possessivartikel: GrammarTopic = {
   id: "possessivartikel",
   title: "Possessivartikel",
   level: "A1",
-  order: 16,
+  order: 20,
   icon: "🏠",
   explanation:
     "**Possessivartikel** atau kata ganti milik digunakan untuk menyatakan kepemilikan atau hubungan antara seseorang dengan benda atau orang lain. Bentuk dasarnya selalu disesuaikan dengan siapa pemiliknya: jika pemiliknya *ich* (saya) → *mein*; jika *du* (kamu) → *dein*, dan seterusnya.\n\n" +

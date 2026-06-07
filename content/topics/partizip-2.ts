@@ -4,7 +4,7 @@ export const partizip2: GrammarTopic = {
   id: "partizip-2",
   title: "Partizip II",
   level: "A1",
-  order: 21,
+  order: 29,
   icon: "🏗️",
   explanation:
     "**Partizip II** adalah bentuk kata kerja non-finit yang digunakan bersama kata kerja bantu (*haben* atau *sein*) untuk membentuk masa lampau **Perfekt**. Dalam struktur kalimat, **Partizip II** selalu menempati posisi paling akhir. Pembentukan bentuk ini bervariasi tergantung apakah kata kerja tersebut beraturan, tidak beraturan, atau memiliki prefiks tertentu.\n\n" +

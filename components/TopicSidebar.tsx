@@ -22,11 +22,15 @@ export function TopicSidebar({
   activeId,
   completed,
   total,
+  basePath = "/grammar",
+  sectionLabel = "Grammar A1",
 }: {
   items: SidebarItem[];
   activeId: string;
   completed: number;
   total: number;
+  basePath?: string;
+  sectionLabel?: string;
 }) {
   const [open, setOpen] = useState(false);
   const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
@@ -56,7 +60,7 @@ export function TopicSidebar({
       >
         <div className="flex items-center justify-between border-b border-teal-soft/70 px-3 py-2.5">
           <h4 className="text-[11px] font-bold uppercase tracking-wide text-slate-400">
-            Grammar A1
+            {sectionLabel}
           </h4>
           <button
             onClick={() => setOpen(false)}
@@ -73,7 +77,7 @@ export function TopicSidebar({
             return (
               <Link
                 key={it.id}
-                href={`/grammar/${it.id}`}
+                href={`${basePath}/${it.id}`}
                 onClick={() => setOpen(false)}
                 className={`flex items-center gap-2 border-l-[3px] px-3 py-2 text-xs transition ${
                   isActive

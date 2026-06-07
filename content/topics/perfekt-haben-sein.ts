@@ -4,7 +4,7 @@ export const perfektHabenSein: GrammarTopic = {
   id: "perfekt-haben-sein",
   title: "Perfekt dengan 'haben' dan 'sein'",
   level: "A1",
-  order: 20,
+  order: 28,
   icon: "⏳",
   explanation:
     "**Perfekt** adalah bentuk waktu lampau yang paling sering digunakan dalam percakapan sehari-hari untuk menceritakan kejadian yang sudah selesai dilakukan. Strukturnya terdiri dari dua bagian tetap (**Satzklammer**): kata kerja bantu (**Hilfsverb**) yang dikonjugasikan di Posisi 2 dan kata kerja utama dalam bentuk **Partizip II** di akhir kalimat.\n\n" +

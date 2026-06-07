@@ -4,7 +4,7 @@ export const artikelNominativ: GrammarTopic = {
   id: "artikel-nominativ",
   title: "Artikel & Nominativ",
   level: "A1",
-  order: 1,
+  order: 2,
   icon: "📘",
   explanation:
     "Dalam bahasa Jerman, setiap kata benda memiliki jenis kelamin gramatikal (gender) yang menentukan artikelnya: **der** untuk maskulin, **die** untuk feminin, dan **das** untuk netral.\n\n" +

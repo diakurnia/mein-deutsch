@@ -9,9 +9,11 @@ export function WortDesTages() {
     <div className="rounded-2xl border border-teal-soft bg-white p-4">
       <div className="mb-2 flex items-center justify-between">
         <p className="text-[11px] font-bold uppercase tracking-wide text-slate-400">
-          Wort des Tages
+          🗓️ Wort des Tages
         </p>
-        <span className="text-sm">📖</span>
+        <span className="rounded-full bg-teal-soft px-2 py-0.5 text-[10px] font-bold text-teal-deep">
+          Neu
+        </span>
       </div>
 
       <div className="flex items-center gap-2">
@@ -20,10 +22,10 @@ export function WortDesTages() {
       </div>
 
       <p className="mt-2 text-sm text-slate-600">
-        <span className="font-semibold text-slate-700">Artinya:</span> {w.arti}
+        <span className="font-semibold text-slate-700">Bedeutung:</span> {w.arti}
       </p>
       <p className="mt-1 text-sm text-slate-500">
-        <span className="font-semibold text-slate-700">Contoh:</span> {w.contoh}
+        <span className="font-semibold text-slate-700">Beispiel:</span> {w.contoh}
       </p>
       <p className="text-xs italic text-slate-400">{w.contohArti}</p>
     </div>

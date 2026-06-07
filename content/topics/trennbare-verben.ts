@@ -4,7 +4,7 @@ export const trennbareVerben: GrammarTopic = {
   id: "trennbare-verben",
   title: "Trennbare Verben",
   level: "A1",
-  order: 6,
+  order: 7,
   icon: "✂️",
   explanation:
     "**Trennbare Verben** adalah kelompok kata kerja dalam bahasa Jerman yang memiliki **prefiks** (awalan) yang dapat terpisah dari kata kerja dasarnya saat digunakan dalam sebuah kalimat. Ciri khas dari kata kerja ini adalah penekanan nada saat diucapkan selalu jatuh pada prefiksnya. Beberapa awalan yang sangat umum antara lain **an-, auf-, aus-, ein-, mit-,** dan **zu-**.\n\n" +

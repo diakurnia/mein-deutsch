@@ -4,7 +4,7 @@ export const negation: GrammarTopic = {
   id: "negation",
   title: "Negation",
   level: "A1",
-  order: 13,
+  order: 14,
   icon: "🚫",
   explanation:
     "**Negation** digunakan untuk menyangkal suatu informasi dalam sebuah kalimat. Dalam bahasa Jerman, terdapat dua kata utama: **nicht** dan **kein**. Penggunaannya bergantung pada elemen apa yang ingin disangkal.\n\n" +

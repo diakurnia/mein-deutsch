@@ -4,7 +4,7 @@ export const personalpronomenAkkusativDativ: GrammarTopic = {
   id: "personalpronomen-akkusativ-dativ",
   title: "Personalpronomen: Akkusativ dan Dativ",
   level: "A1",
-  order: 18,
+  order: 19,
   icon: "👥",
   explanation:
     "Dalam bahasa Jerman, **Personalpronomen** (kata ganti orang) tidak hanya berfungsi sebagai subjek (**Nominativ**), tetapi juga berubah bentuk saat menjadi objek dalam kalimat. Perubahannya bergantung pada apakah kata ganti tersebut berfungsi sebagai objek langsung (**Akkusativ**) atau objek tidak langsung (**Dativ**).\n\n" +

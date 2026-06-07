@@ -4,7 +4,7 @@ import { getAllTopics } from "@/content/topics";
 import { getAllBasics } from "@/content/basics";
 import { AppSidebar } from "@/components/AppSidebar";
 
-export default async function GrammarLayout({
+export default async function GrundlagenLayout({
   children,
 }: {
   children: React.ReactNode;
