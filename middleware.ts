@@ -2,7 +2,7 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 // Route yang butuh login
-const PROTECTED_PREFIXES = ["/dashboard", "/grammar", "/grundlagen", "/profil"];
+const PROTECTED_PREFIXES = ["/dashboard", "/grammar", "/grundlagen", "/wortschatz", "/profil"];
 
 // Route yang tidak boleh diakses setelah login (redirect ke dashboard)
 const AUTH_ROUTES = ["/login"];
