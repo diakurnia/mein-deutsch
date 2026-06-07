@@ -1,23 +1,23 @@
 import type { GrammarExercise } from "@/content/types";
 
 export type BasicsItem = {
-  de: string;
-  id: string;
-  hint?: string;
+  de: string;          // teks Jerman — yang dibacakan SpeakButton
+  translation: string; // arti / keterangan Indonesia
+  hint?: string;       // cara baca atau catatan singkat
 };
 
 export type BasicsGroup = {
-  caption: string;
+  caption: string;     // judul kelompok, mis. "Angka 0–12"
   items: BasicsItem[];
 };
 
 export type BasicsTopic = {
-  id: string;
+  id: string;          // slug, mis. "alphabet"
   title: string;
-  level: string;
+  level: string;       // mis. "A1"
   order: number;
-  icon: string;
-  intro: string;
+  icon: string;        // emoji
+  intro: string;       // penjelasan singkat (markdown via RichText)
   groups: BasicsGroup[];
   exercises: GrammarExercise[];
 };
