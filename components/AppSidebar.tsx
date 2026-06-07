@@ -14,11 +14,13 @@ type NavItem = {
 export function AppSidebar({
   firstTopicId,
   firstBasicsId,
+  firstVocabId,
   userInitial,
   userName,
 }: {
   firstTopicId: string;
   firstBasicsId: string;
+  firstVocabId: string;
   userInitial: string;
   userName: string;
 }) {
@@ -28,7 +30,7 @@ export function AppSidebar({
     { id: "dashboard", label: "Übersicht", icon: "🏠", href: "/dashboard", available: true },
     { id: "grundlagen", label: "Grundlagen", icon: "🧱", href: `/grundlagen/${firstBasicsId}`, available: true },
     { id: "grammar", label: "Grammatik", icon: "📐", href: `/grammar/${firstTopicId}`, available: true },
-    { id: "vocabulary", label: "Wortschatz", icon: "📚", href: null, available: false },
+    { id: "vocabulary", label: "Wortschatz", icon: "📚", href: `/wortschatz/${firstVocabId}`, available: true },
     { id: "listening", label: "Hören", icon: "🎧", href: null, available: false },
     { id: "review", label: "Übungen & Quiz", icon: "✅", href: null, available: false },
   ];
@@ -37,6 +39,7 @@ export function AppSidebar({
     if (id === "dashboard") return pathname === "/dashboard";
     if (id === "grundlagen") return pathname.startsWith("/grundlagen/");
     if (id === "grammar") return pathname.startsWith("/grammar/");
+    if (id === "vocabulary") return pathname.startsWith("/wortschatz/");
     return false;
   }
 
