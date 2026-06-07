@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getBasic, getAllBasics } from "@/content/basics";
-import { statusFor, summarize, type ProgressRow } from "@/lib/progress";
+import { statusFor, summarizeFor, type ProgressRow } from "@/lib/progress";
 import { TopicSidebar, type SidebarItem } from "@/components/TopicSidebar";
 import { RichText } from "@/components/RichText";
 import { BasicsGrid } from "@/components/BasicsGrid";
@@ -35,7 +35,7 @@ export default async function BasicsTopicPage({
   const rows = (data ?? []) as ProgressRow[];
 
   const topics = getAllBasics();
-  const summary = summarize(rows, topics.length);
+  const summary = summarizeFor(rows, topics.map((t) => t.id));
   const done = statusFor(rows, topic.id) === "selesai";
 
   const sidebarItems: SidebarItem[] = topics.map((t) => ({

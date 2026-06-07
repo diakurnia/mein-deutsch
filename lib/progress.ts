@@ -74,3 +74,17 @@ export function summarize(rows: ProgressRow[], total: number) {
   const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
   return { completed, total, percent };
 }
+
+/**
+ * Seperti summarize(), tapi hanya menghitung topik yang id-nya ada
+ * dalam daftar `ids` (untuk progress per-pilar).
+ */
+export function summarizeFor(rows: ProgressRow[], ids: string[]) {
+  const idSet = new Set(ids);
+  const completed = rows.filter(
+    (r) => r.status === "selesai" && idSet.has(r.topic_id)
+  ).length;
+  const total = ids.length;
+  const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
+  return { completed, total, percent };
+}

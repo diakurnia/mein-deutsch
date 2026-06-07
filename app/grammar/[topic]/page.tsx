@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getTopic, getAllTopics } from "@/content/topics";
-import { statusFor, summarize, type ProgressRow } from "@/lib/progress";
+import { statusFor, summarizeFor, type ProgressRow } from "@/lib/progress";
 import { TopicSidebar, type SidebarItem } from "@/components/TopicSidebar";
 import { SpeakButton } from "@/components/SpeakButton";
 import { Collapsible } from "@/components/Collapsible";
@@ -36,7 +36,7 @@ export default async function TopicPage({
   const rows = (data ?? []) as ProgressRow[];
 
   const topics = getAllTopics();
-  const summary = summarize(rows, topics.length);
+  const summary = summarizeFor(rows, topics.map((t) => t.id));
   const done = statusFor(rows, topic.id) === "selesai";
 
   // Item untuk sidebar

@@ -2,9 +2,10 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getAllTopics } from "@/content/topics";
+import { getAllBasics } from "@/content/basics";
 import {
   statusFor,
-  summarize,
+  summarizeFor,
   weeklyActivity,
   calcStreak,
   completedTodayCount,
@@ -32,7 +33,16 @@ export default async function GrammarDashboard() {
   const rows = (data ?? []) as ProgressRow[];
 
   const topics = getAllTopics();
-  const summary = summarize(rows, topics.length);
+  const basicsTopics = getAllBasics();
+  const grammarSummary = summarizeFor(rows, topics.map((t) => t.id));
+  const basicsSummary = summarizeFor(rows, basicsTopics.map((t) => t.id));
+  const overall = summarizeFor(rows, [
+    ...topics.map((t) => t.id),
+    ...basicsTopics.map((t) => t.id),
+  ]);
+  const continueBasics =
+    basicsTopics.find((t) => statusFor(rows, t.id) !== "selesai") ??
+    basicsTopics[basicsTopics.length - 1];
   const activity = weeklyActivity(rows);
   const streak = calcStreak(rows);
   const completedToday = completedTodayCount(rows);
@@ -134,22 +144,32 @@ export default async function GrammarDashboard() {
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {SECTIONS.map((s) => {
                 const resolvedHref =
-                  s.id === "grammar" ? `/grammar/${continueTopic.id}` : s.href;
+                  s.id === "grammar"
+                    ? `/grammar/${continueTopic.id}`
+                    : s.id === "grundlagen"
+                    ? `/grundlagen/${continueBasics.id}`
+                    : s.href;
+                const sectionSummary =
+                  s.id === "grammar"
+                    ? grammarSummary
+                    : s.id === "grundlagen"
+                    ? basicsSummary
+                    : null;
                 const inner = (
                   <>
                     <span className="text-2xl">{s.icon}</span>
                     <div className="flex-1">
                       <h5 className="text-sm font-bold text-slate-900">{s.label}</h5>
-                      {s.id === "grammar" ? (
+                      {sectionSummary ? (
                         <>
                           <div className="mt-1.5 h-1 max-w-[180px] overflow-hidden rounded-full bg-teal-soft">
                             <div
                               className="h-full rounded-full bg-teal-brand"
-                              style={{ width: `${summary.percent}%` }}
+                              style={{ width: `${sectionSummary.percent}%` }}
                             />
                           </div>
                           <small className="text-[10px] text-slate-400">
-                            {summary.completed}/{summary.total} topik selesai
+                            {sectionSummary.completed}/{sectionSummary.total} topik selesai
                           </small>
                         </>
                       ) : (
@@ -186,13 +206,13 @@ export default async function GrammarDashboard() {
         {/* ─── Kolom kanan (1/3) ─── */}
         <div className="flex flex-col gap-4">
           <StatCard
-            value={String(summary.completed)}
+            value={String(overall.completed)}
             label="Topik Selesai"
             sub="Terus tingkatkan!"
             icon="📘"
           />
           <StatCard
-            value={String(summary.total)}
+            value={String(overall.total)}
             label="Total Topik"
             sub="Level A1 · Dasar"
             icon="📄"
@@ -201,13 +221,13 @@ export default async function GrammarDashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-2xl font-extrabold text-teal-deep">
-                  {summary.percent}%
+                  {overall.percent}%
                 </div>
                 <p className="text-sm font-semibold text-slate-700">
                   Progress Keseluruhan
                 </p>
                 <p className="text-[11px] text-slate-400">
-                  {summary.completed} dari {summary.total} topik selesai
+                  {overall.completed} dari {overall.total} topik selesai
                 </p>
               </div>
               <span className="text-2xl">📊</span>
@@ -215,7 +235,7 @@ export default async function GrammarDashboard() {
             <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-teal-soft">
               <div
                 className="h-full rounded-full bg-teal-brand"
-                style={{ width: `${summary.percent}%` }}
+                style={{ width: `${overall.percent}%` }}
               />
             </div>
           </div>
