@@ -9,17 +9,17 @@ export function BasicsGrid({ groups }: { groups: BasicsGroup[] }) {
           <p className="mb-2 text-[11px] font-bold uppercase tracking-wide text-teal-deep">
             {group.caption}
           </p>
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             {group.items.map((item, ii) => (
               <div
                 key={ii}
-                className="flex items-center justify-between gap-2 rounded-xl border border-teal-soft bg-white p-2.5"
+                className="flex items-start justify-between gap-2 rounded-xl border border-teal-soft bg-white p-2.5"
               >
-                <div className="min-w-0">
-                  <b className="block truncate text-sm text-slate-900">{item.de}</b>
-                  <span className="block truncate text-xs text-slate-400">{item.translation}</span>
+                <div className="min-w-0 flex-1">
+                  <b className="block break-words text-sm text-slate-900">{item.de}</b>
+                  <span className="block break-words text-xs text-slate-400">{item.translation}</span>
                   {item.hint && (
-                    <span className="block truncate text-[10px] text-teal-deep">{item.hint}</span>
+                    <span className="block break-words text-[10px] text-teal-deep">{item.hint}</span>
                   )}
                 </div>
                 <SpeakButton text={item.speakText ?? item.de} />
