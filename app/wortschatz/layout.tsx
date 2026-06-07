@@ -5,7 +5,7 @@ import { getAllBasics } from "@/content/basics";
 import { getAvailableVocab } from "@/content/vocab";
 import { AppSidebar } from "@/components/AppSidebar";
 
-export default async function GrammarLayout({
+export default async function WortschatzLayout({
   children,
 }: {
   children: React.ReactNode;
