@@ -13,10 +13,12 @@ type NavItem = {
 
 export function AppSidebar({
   firstTopicId,
+  firstBasicsId,
   userInitial,
   userName,
 }: {
   firstTopicId: string;
+  firstBasicsId: string;
   userInitial: string;
   userName: string;
 }) {
@@ -24,6 +26,7 @@ export function AppSidebar({
 
   const NAV: NavItem[] = [
     { id: "dashboard", label: "Dashboard", icon: "🏠", href: "/dashboard", available: true },
+    { id: "grundlagen", label: "Grundlagen", icon: "🧱", href: `/grundlagen/${firstBasicsId}`, available: true },
     { id: "grammar", label: "Grammar", icon: "📐", href: `/grammar/${firstTopicId}`, available: true },
     { id: "vocabulary", label: "Vocabulary", icon: "📚", href: null, available: false },
     { id: "listening", label: "Listening", icon: "🎧", href: null, available: false },
@@ -32,6 +35,7 @@ export function AppSidebar({
 
   function isActive(id: string): boolean {
     if (id === "dashboard") return pathname === "/dashboard";
+    if (id === "grundlagen") return pathname.startsWith("/grundlagen/");
     if (id === "grammar") return pathname.startsWith("/grammar/");
     return false;
   }

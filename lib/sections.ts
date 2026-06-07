@@ -15,6 +15,7 @@ export type Section = {
 };
 
 export const SECTIONS: Section[] = [
+  { id: "grundlagen", label: "Grundlagen", icon: "🧱", href: "/grundlagen", available: true },
   { id: "grammar", label: "Grammar", icon: "📐", href: "/grammar", available: true },
   { id: "vocabulary", label: "Vocabulary", icon: "📚", href: null, available: false },
   { id: "listening", label: "Listening", icon: "🎧", href: null, available: false },
