@@ -173,6 +173,8 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="border-t border-teal-soft px-6 py-4 text-center text-xs text-slate-400">
         Mein-Deutsch · Belajar bahasa Jerman A1
+        {" · "}
+        <Link href="/privacy" className="hover:underline">Kebijakan Privasi</Link>
       </footer>
     </div>
   );

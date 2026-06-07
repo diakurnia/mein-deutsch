@@ -95,11 +95,13 @@ export function AppSidebar({
 
       {/* Profil user (desktop saja) */}
       <div className="hidden items-center gap-3 border-t border-teal-soft px-4 py-3 lg:flex">
-        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-brand text-sm font-extrabold text-teal-deep">
+        <Link href="/profil" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal-brand text-sm font-extrabold text-teal-deep transition hover:brightness-95" title="Lihat profil">
           {userInitial}
-        </div>
+        </Link>
         <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-bold text-slate-900">{userName}</p>
+          <Link href="/profil" className="block truncate text-sm font-bold text-slate-900 hover:text-teal-deep">
+            {userName}
+          </Link>
           <p className="text-[11px] text-slate-400">A1 Beginner</p>
         </div>
         <form action="/auth/signout" method="post">
