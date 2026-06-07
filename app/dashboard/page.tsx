@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getAllTopics } from "@/content/topics";
 import { getAllBasics } from "@/content/basics";
+import { getAvailableVocab } from "@/content/vocab";
 import {
   statusFor,
   summarizeFor,
@@ -34,11 +35,14 @@ export default async function GrammarDashboard() {
 
   const topics = getAllTopics();
   const basicsTopics = getAllBasics();
+  const vocabTopics = getAvailableVocab();
   const grammarSummary = summarizeFor(rows, topics.map((t) => t.id));
   const basicsSummary = summarizeFor(rows, basicsTopics.map((t) => t.id));
+  const vocabSummary = summarizeFor(rows, vocabTopics.map((t) => t.id));
   const overall = summarizeFor(rows, [
     ...topics.map((t) => t.id),
     ...basicsTopics.map((t) => t.id),
+    ...vocabTopics.map((t) => t.id),
   ]);
   const continueBasics =
     basicsTopics.find((t) => statusFor(rows, t.id) !== "selesai") ??
@@ -162,6 +166,8 @@ export default async function GrammarDashboard() {
                     ? grammarSummary
                     : s.id === "grundlagen"
                     ? basicsSummary
+                    : s.id === "vocabulary"
+                    ? vocabSummary
                     : null;
                 const inner = (
                   <>
@@ -243,6 +249,13 @@ export default async function GrammarDashboard() {
                 completed={grammarSummary.completed}
                 total={grammarSummary.total}
                 percent={grammarSummary.percent}
+              />
+              <PilarProgress
+                icon="📚"
+                label="Wortschatz"
+                completed={vocabSummary.completed}
+                total={vocabSummary.total}
+                percent={vocabSummary.percent}
               />
             </div>
 
