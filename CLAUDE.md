@@ -52,15 +52,15 @@ Proyek punya **tiga pilar belajar aktif**:
 | Order | ID | Status |
 |---|---|---|
 | 1 | familie | ✅ Aktif (18 kata) |
-| 2 | essen-trinken | 🔒 Placeholder |
-| 3 | wohnen | 🔒 Placeholder |
-| 4 | beruf-arbeit | 🔒 Placeholder |
-| 5 | freizeit-hobbys | 🔒 Placeholder |
-| 6 | koerper-gesundheit | 🔒 Placeholder |
-| 7 | kleidung | 🔒 Placeholder |
-| 8 | stadt-verkehr | 🔒 Placeholder |
-| 9 | einkaufen | 🔒 Placeholder |
-| 10 | schule-lernen | 🔒 Placeholder |
+| 2 | essen-trinken | ✅ Aktif (18 kata) |
+| 3 | wohnen | ✅ Aktif (18 kata) |
+| 4 | beruf-arbeit | ✅ Aktif (18 kata) |
+| 5 | freizeit-hobbys | ✅ Aktif (18 kata) |
+| 6 | koerper-gesundheit | ✅ Aktif (18 kata) |
+| 7 | kleidung | ✅ Aktif (18 kata) |
+| 8 | stadt-verkehr | ✅ Aktif (18 kata) |
+| 9 | einkaufen | ✅ Aktif (18 kata) |
+| 10 | schule-lernen | ✅ Aktif (18 kata) |
 
 ---
 
@@ -180,3 +180,15 @@ npm run build                         # build produksi
 - `docs/superpowers/plans/2026-06-07-grundlagen-pillar.md` — rencana implementasi Grundlagen
 - `docs/superpowers/specs/2026-06-07-wortschatz-pillar-design.md` — desain teknis pilar Wortschatz
 - `docs/superpowers/plans/2026-06-07-wortschatz-pillar.md` — rencana implementasi Wortschatz (sudah selesai)
+
+---
+
+## Status Pilar
+
+| Pilar | Status | Catatan |
+|---|---|---|
+| Grundlagen | ✅ Selesai | 7 topik |
+| Grammatik | ✅ Selesai | 29 topik |
+| Wortschatz | ✅ Selesai | 10 tema × 18 kata = 180 kata |
+| Hören | 🔒 Belum dibangun | — |
+| Übungen & Quiz | 🔒 Belum dibangun | — |
