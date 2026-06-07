@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
@@ -137,9 +138,16 @@ export default function LoginPage() {
 
       {/* Password */}
       <div className="flex flex-col gap-1">
-        <label className="text-xs font-semibold text-slate-500">
-          Password {mode === "up" && <span className="text-slate-400">(min. 8 karakter)</span>}
-        </label>
+        <div className="flex items-center justify-between">
+          <label className="text-xs font-semibold text-slate-500">
+            Password {mode === "up" && <span className="text-slate-400">(min. 8 karakter)</span>}
+          </label>
+          {mode === "in" && (
+            <Link href="/forgot-password" className="text-xs text-teal-deep hover:underline">
+              Lupa password?
+            </Link>
+          )}
+        </div>
         <div className="relative">
           <input
             className="w-full rounded-lg border border-slate-200 px-3 py-2.5 pr-10 text-sm outline-none transition focus:border-teal-brand focus:ring-2 focus:ring-teal-brand/20"
