@@ -1,9 +1,10 @@
 import type { GrammarExercise } from "@/content/types";
 
 export type BasicsItem = {
-  de: string;          // teks Jerman — yang dibacakan SpeakButton
-  translation: string; // arti / keterangan Indonesia
-  hint?: string;       // cara baca atau catatan singkat
+  de: string;           // teks Jerman — ditampilkan di kartu
+  translation: string;  // arti / keterangan Indonesia
+  hint?: string;        // cara baca atau catatan singkat (ditampilkan, bukan dibacakan)
+  speakText?: string;   // teks yang dibacakan TTS — jika berbeda dari de (mis. nama bunyi huruf)
 };
 
 export type BasicsGroup = {
