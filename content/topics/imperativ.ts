@@ -4,7 +4,7 @@ export const imperativ: GrammarTopic = {
   id: "imperativ",
   title: "Imperativ",
   level: "A1",
-  order: 7,
+  order: 13,
   icon: "📢",
   explanation:
     "**Imperativ** adalah bentuk kalimat perintah yang digunakan untuk memberikan instruksi, permintaan, saran, atau larangan kepada orang lain. Dalam bahasa Jerman, bentuk perintah ini sangat dipengaruhi oleh kepada siapa kita berbicara: satu orang secara akrab (**du**), banyak orang secara akrab (**ihr**), atau dalam situasi resmi (**Sie**).\n\n" +

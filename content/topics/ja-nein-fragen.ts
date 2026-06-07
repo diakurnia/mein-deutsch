@@ -4,7 +4,7 @@ export const jaNeinFragen: GrammarTopic = {
   id: "ja-nein-fragen-antworten",
   title: "Ja-/Nein-Fragen dan Jawaban",
   level: "A1",
-  order: 9,
+  order: 12,
   icon: "✅",
   explanation:
     "**Ja-/Nein-Fragen** adalah jenis pertanyaan dalam bahasa Jerman yang hanya membutuhkan jawaban 'ya' atau 'tidak'. Berbeda dengan kalimat pernyataan atau W-Fragen, dalam struktur kalimat tanya jenis ini **kata kerja** yang dikonjugasikan selalu menempati **Posisi 1**, sementara **subjek** mengikuti tepat di sebelahnya pada **Posisi 2**.\n\n" +

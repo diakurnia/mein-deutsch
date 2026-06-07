@@ -4,7 +4,7 @@ export const praeteritumSeinHaben: GrammarTopic = {
   id: "praeteritum-sein-haben",
   title: "Präteritum: 'sein' dan 'haben'",
   level: "A1",
-  order: 19,
+  order: 27,
   icon: "🕰️",
   explanation:
     "**Präteritum** adalah salah satu bentuk waktu lampau dalam bahasa Jerman yang digunakan untuk menyatakan fakta, kondisi, atau kepemilikan di masa lalu. Meskipun bentuk *Perfekt* lebih umum dalam percakapan sehari-hari, khusus untuk kata kerja **sein** dan **haben**, bentuk **Präteritum** jauh lebih lazim digunakan.\n\n" +

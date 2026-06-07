@@ -4,7 +4,7 @@ export const wFragen: GrammarTopic = {
   id: "w-fragen",
   title: "W-Fragen",
   level: "A1",
-  order: 8,
+  order: 11,
   icon: "❓",
   explanation:
     "**W-Fragen** adalah jenis kalimat tanya dalam bahasa Jerman yang membutuhkan informasi spesifik sebagai jawabannya, bukan sekadar 'ya' atau 'tidak'. Disebut 'W-Fragen' karena kata tanya yang digunakan hampir selalu diawali huruf 'W', seperti **Wer** (siapa), **Was** (apa), **Wie** (bagaimana), dan **Wo** (di mana).\n\n" +

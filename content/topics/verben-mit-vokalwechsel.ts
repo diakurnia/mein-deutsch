@@ -4,7 +4,7 @@ export const verbenMitVokalwechsel: GrammarTopic = {
   id: "verben-mit-vokalwechsel",
   title: "Verben mit Vokalwechsel",
   level: "A1",
-  order: 4,
+  order: 5,
   icon: "🔄",
   explanation:
     "**Verben mit Vokalwechsel** adalah kelompok kata kerja yang mengalami perubahan huruf vokal pada kata dasarnya saat dikonjugasikan. Perubahan ini sangat spesifik karena hanya terjadi pada subjek orang kedua tunggal (**du**) dan orang ketiga tunggal (**er, sie, es**). Untuk subjek lainnya seperti *ich, wir, ihr,* dan *sie/Sie*, vokal kata kerja tetap mengikuti bentuk dasar (Infinitiv).\n\n" +

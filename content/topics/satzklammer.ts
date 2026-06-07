@@ -4,7 +4,7 @@ export const satzklammer: GrammarTopic = {
   id: "satzklammer",
   title: "Satzklammer (Dua Posisi Tetap)",
   level: "A1",
-  order: 11,
+  order: 15,
   icon: "🔗",
   explanation:
     "**Satzklammer** (bingkai kalimat) adalah struktur unik dalam tata bahasa Jerman di mana elemen kata kerja terbagi menjadi dua bagian yang mengapit elemen kalimat lainnya. Bagian pertama adalah kata kerja yang dikonjugasikan sesuai subjek di **Posisi 2**, sedangkan bagian kedua diletakkan tepat di **akhir kalimat** dalam bentuk tetap.\n\n" +

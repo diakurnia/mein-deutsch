@@ -4,7 +4,7 @@ export const konjugationPraesens: GrammarTopic = {
   id: "konjugation-praesens",
   title: "Konjugation Präsens",
   level: "A1",
-  order: 2,
+  order: 3,
   icon: "✍️",
   explanation:
     "**Konjugation Präsens** adalah perubahan bentuk kata kerja untuk menyatakan kejadian yang terjadi di masa sekarang. Dalam bahasa Jerman, setiap kata kerja terdiri dari **kata dasar** (Stamm) dan **akhiran** (Endung). Untuk menggunakannya dalam kalimat, akhiran kata kerja harus disesuaikan dengan subjek atau **Personalpronomen** yang digunakan.\n\n" +

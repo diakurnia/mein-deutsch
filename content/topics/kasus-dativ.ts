@@ -4,7 +4,7 @@ export const kasusDativ: GrammarTopic = {
   id: "kasus-dativ",
   title: "Kasus Dativ",
   level: "A1",
-  order: 15,
+  order: 17,
   icon: "🎁",
   explanation:
     "**Kasus Dativ** digunakan untuk menunjukkan **objek tidak langsung** dalam sebuah kalimat — yaitu orang yang menerima sesuatu atau menjadi sasaran tidak langsung dari sebuah tindakan. Selain itu, kasus ini wajib digunakan setelah kata kerja tertentu seperti **helfen** (membantu), **danken** (berterima kasih), dan **gefallen** (berkenan/disukai).\n\n" +

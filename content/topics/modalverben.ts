@@ -4,7 +4,7 @@ export const modalverben: GrammarTopic = {
   id: "modalverben-konjugasi-posisi",
   title: "Modalverben: Konjugasi dan Posisi dalam Kalimat",
   level: "A1",
-  order: 5,
+  order: 6,
   icon: "🧩",
   explanation:
     "**Modalverben** (kata kerja bantu modal) adalah kelompok kata kerja yang mengubah makna dasar dari kata kerja lain dalam sebuah kalimat, seperti menyatakan kemampuan, keharusan, atau keinginan. Di level A1, terdapat enam modal verbs utama: **können** (bisa), **müssen** (harus), **wollen** (ingin/hendak), **dürfen** (boleh), **sollen** (seharusnya), dan **möchten** (ingin/suka).\n\n" +
