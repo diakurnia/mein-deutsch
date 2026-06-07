@@ -2,7 +2,7 @@ import type { BasicsTopic } from "@/content/basics-types";
 
 export const begruessung: BasicsTopic = {
   id: "begruessung",
-  title: "Salam & Perkenalan",
+  title: "Begrüßung & Vorstellung",
   level: "A1",
   order: 7,
   icon: "👋",

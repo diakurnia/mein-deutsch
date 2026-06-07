@@ -2,7 +2,7 @@ import type { BasicsTopic } from "@/content/basics-types";
 
 export const uhrzeit: BasicsTopic = {
   id: "uhrzeit",
-  title: "Waktu / Jam",
+  title: "Uhrzeit",
   level: "A1",
   order: 5,
   icon: "🕐",

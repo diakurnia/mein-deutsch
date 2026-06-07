@@ -2,7 +2,7 @@ import type { BasicsTopic } from "@/content/basics-types";
 
 export const aussprache: BasicsTopic = {
   id: "aussprache",
-  title: "Pelafalan & Ejaan",
+  title: "Aussprache",
   level: "A1",
   order: 2,
   icon: "🗣️",

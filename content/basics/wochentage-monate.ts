@@ -2,7 +2,7 @@ import type { BasicsTopic } from "@/content/basics-types";
 
 export const wochentageMonate: BasicsTopic = {
   id: "wochentage-monate",
-  title: "Hari, Bulan, Musim & Tahun",
+  title: "Wochentage, Monate & Jahreszeiten",
   level: "A1",
   order: 4,
   icon: "📅",

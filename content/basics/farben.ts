@@ -2,7 +2,7 @@ import type { BasicsTopic } from "@/content/basics-types";
 
 export const farben: BasicsTopic = {
   id: "farben",
-  title: "Warna",
+  title: "Farben",
   level: "A1",
   order: 6,
   icon: "🎨",

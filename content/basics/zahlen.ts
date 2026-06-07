@@ -2,7 +2,7 @@ import type { BasicsTopic } from "@/content/basics-types";
 
 export const zahlen: BasicsTopic = {
   id: "zahlen",
-  title: "Angka",
+  title: "Zahlen",
   level: "A1",
   order: 3,
   icon: "🔢",

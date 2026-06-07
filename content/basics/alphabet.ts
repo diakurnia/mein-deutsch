@@ -2,7 +2,7 @@ import type { BasicsTopic } from "@/content/basics-types";
 
 export const alphabet: BasicsTopic = {
   id: "alphabet",
-  title: "Alfabet",
+  title: "Alphabet",
   level: "A1",
   order: 1,
   icon: "🔤",

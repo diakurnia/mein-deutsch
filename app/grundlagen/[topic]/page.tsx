@@ -58,7 +58,7 @@ export default async function BasicsTopicPage({
           completed={summary.completed}
           total={summary.total}
           basePath="/grundlagen"
-          sectionLabel="Materi Dasar A1"
+          sectionLabel="Grundlagen A1"
         />
 
         <main className="mx-auto w-full max-w-xl px-5 py-6">
