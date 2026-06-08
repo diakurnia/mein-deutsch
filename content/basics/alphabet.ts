@@ -72,5 +72,15 @@ export const alphabet: BasicsTopic = {
       options: ["ß", "ö", "y"],
       answer: "ö",
     },
+    {
+      question: "Huruf 'J' dalam bahasa Jerman dieja…",
+      options: ["jeh", "yot", "djei"],
+      answer: "yot",
+    },
+    {
+      question: "Huruf 'V' dalam bahasa Jerman dieja…",
+      options: ["feh", "fau", "veh"],
+      answer: "fau",
+    },
   ],
 };

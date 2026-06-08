@@ -17,6 +17,12 @@ describe("content basics", () => {
     }
   });
 
+  it("setiap topik punya minimal 5 soal latihan", () => {
+    for (const t of getAllBasics()) {
+      expect(t.exercises.length).toBeGreaterThanOrEqual(5);
+    }
+  });
+
   it("setiap topik punya minimal satu grup berisi item", () => {
     for (const t of getAllBasics()) {
       expect(t.groups.length).toBeGreaterThan(0);

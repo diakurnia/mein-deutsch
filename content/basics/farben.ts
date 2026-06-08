@@ -42,5 +42,15 @@ export const farben: BasicsTopic = {
       options: ["rot", "rosa", "grau"],
       answer: "rot",
     },
+    {
+      question: "'blau' artinya…",
+      options: ["biru", "cokelat", "abu-abu"],
+      answer: "biru",
+    },
+    {
+      question: "Bahasa Jerman untuk 'putih' adalah…",
+      options: ["weiß", "schwarz", "gelb"],
+      answer: "weiß",
+    },
   ],
 };

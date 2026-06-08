@@ -52,5 +52,15 @@ export const aussprache: BasicsTopic = {
       options: ["/ai/", "/ei/", "/i/"],
       answer: "/ai/",
     },
+    {
+      question: "Gabungan 'sch' pada 'Schule' dibaca…",
+      options: ["/sy/", "/sk/", "/c/"],
+      answer: "/sy/",
+    },
+    {
+      question: "Huruf 'v' pada 'Vater' dibaca…",
+      options: ["/f/", "/v/", "/w/"],
+      answer: "/f/",
+    },
   ],
 };

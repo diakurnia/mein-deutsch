@@ -17,6 +17,12 @@ describe("content topics", () => {
     }
   });
 
+  it("setiap topik punya minimal 5 soal latihan", () => {
+    for (const t of getAllTopics()) {
+      expect(t.exercises.length).toBeGreaterThanOrEqual(5);
+    }
+  });
+
   it("getTopic mengembalikan topik sesuai id, atau undefined", () => {
     const first = getAllTopics()[0];
     expect(getTopic(first.id)?.id).toBe(first.id);

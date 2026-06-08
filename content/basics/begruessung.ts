@@ -53,5 +53,15 @@ export const begruessung: BasicsTopic = {
       options: ["Ich heiße…", "Ich komme…", "Ich bin … alt"],
       answer: "Ich heiße…",
     },
+    {
+      question: "Sapaan yang tepat di pagi hari adalah…",
+      options: ["Guten Morgen", "Guten Abend", "Gute Nacht"],
+      answer: "Guten Morgen",
+    },
+    {
+      question: "'Woher kommst du?' artinya…",
+      options: ["Siapa namamu?", "Kamu berasal dari mana?", "Berapa umurmu?"],
+      answer: "Kamu berasal dari mana?",
+    },
   ],
 };
