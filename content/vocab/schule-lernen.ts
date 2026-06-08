@@ -60,5 +60,10 @@ export const schuleLernen: VocabTopic = {
       options: ['mudah', 'menarik', 'sulit'],
       answer: 'sulit',
     },
+    {
+      question: 'Lengkapi kalimat: "Ich ___ jeden Tag Deutsch." (lernen)',
+      options: ['lerne', 'lernt', 'lernen'],
+      answer: 'lerne',
+    },
   ],
 };

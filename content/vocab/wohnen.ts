@@ -60,5 +60,10 @@ export const wohnen: VocabTopic = {
       options: ['mahal', 'kecil', 'nyaman'],
       answer: 'nyaman',
     },
+    {
+      question: 'Lengkapi kalimat: "Ich ___ in einer Wohnung in Berlin." (wohnen)',
+      options: ['wohne', 'wohnt', 'wohnen'],
+      answer: 'wohne',
+    },
   ],
 };

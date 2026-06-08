@@ -60,5 +60,10 @@ export const freizeitHobbys: VocabTopic = {
       options: ['menarik', 'menyenangkan', 'membosankan'],
       answer: 'membosankan',
     },
+    {
+      question: 'Lengkapi konjugasi: "Sie ___ gern ein Buch." (lesen, er/sie)',
+      options: ['liest', 'lese', 'lesen'],
+      answer: 'liest',
+    },
   ],
 };

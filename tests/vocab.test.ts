@@ -54,6 +54,20 @@ describe('getVocab', () => {
     });
   });
 
+  it('semua tema: jawaban latihan selalu ada di pilihan', () => {
+    getAllVocab().forEach((topic) => {
+      topic.exercises.forEach((ex) => {
+        expect(ex.options).toContain(ex.answer);
+      });
+    });
+  });
+
+  it('semua tema aktif punya minimal 5 soal latihan', () => {
+    getAvailableVocab().forEach((topic) => {
+      expect(topic.exercises.length).toBeGreaterThanOrEqual(5);
+    });
+  });
+
   it('tema familie memiliki 18 item', () => {
     const topic = getVocab('familie')!;
     expect(topic.items).toHaveLength(18);

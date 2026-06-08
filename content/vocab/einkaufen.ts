@@ -60,5 +60,10 @@ export const einkaufen: VocabTopic = {
       options: ['bagus', 'mahal', 'murah'],
       answer: 'murah',
     },
+    {
+      question: 'Lengkapi kalimat: "Ich ___ an der Kasse." (bezahlen)',
+      options: ['bezahle', 'bezahlt', 'bezahlen'],
+      answer: 'bezahle',
+    },
   ],
 };

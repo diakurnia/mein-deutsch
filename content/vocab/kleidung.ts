@@ -60,5 +60,10 @@ export const kleidung: VocabTopic = {
       options: ['mahal', 'ketat', 'nyaman'],
       answer: 'nyaman',
     },
+    {
+      question: 'Lengkapi konjugasi: "Sie ___ heute eine Jacke." (tragen, er/sie)',
+      options: ['trägt', 'trage', 'tragen'],
+      answer: 'trägt',
+    },
   ],
 };

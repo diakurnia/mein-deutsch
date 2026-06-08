@@ -60,5 +60,10 @@ export const berufArbeit: VocabTopic = {
       options: ['malas', 'rajin', 'lelah'],
       answer: 'rajin',
     },
+    {
+      question: 'Lengkapi konjugasi: "Sie ___ im Büro." (arbeiten, er/sie)',
+      options: ['arbeitet', 'arbeite', 'arbeiten'],
+      answer: 'arbeitet',
+    },
   ],
 };

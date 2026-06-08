@@ -61,5 +61,10 @@ export const familie: VocabTopic = {
       options: ['bekerja', 'tinggal', 'makan'],
       answer: 'tinggal',
     },
+    {
+      question: 'Lengkapi konjugasi: "Ich ___ eine große Familie." (haben)',
+      options: ['habe', 'hat', 'hast'],
+      answer: 'habe',
+    },
   ],
 };

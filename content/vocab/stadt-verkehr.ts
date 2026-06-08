@@ -60,5 +60,10 @@ export const stadtVerkehr: VocabTopic = {
       options: ['dekat', 'cepat', 'jauh'],
       answer: 'jauh',
     },
+    {
+      question: 'Lengkapi konjugasi: "Er ___ mit dem Bus." (fahren, er/sie)',
+      options: ['fährt', 'fahre', 'fahren'],
+      answer: 'fährt',
+    },
   ],
 };

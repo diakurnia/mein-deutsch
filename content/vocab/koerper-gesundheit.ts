@@ -60,5 +60,10 @@ export const koerperGesundheit: VocabTopic = {
       options: ['sehat', 'lelah', 'sakit'],
       answer: 'sakit',
     },
+    {
+      question: 'Lengkapi konjugasi: "Er ___ acht Stunden." (schlafen, er/sie)',
+      options: ['schläft', 'schlafe', 'schlafen'],
+      answer: 'schläft',
+    },
   ],
 };

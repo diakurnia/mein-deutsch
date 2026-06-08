@@ -60,5 +60,10 @@ export const essenTrinken: VocabTopic = {
       options: ['mahal', 'cepat', 'enak'],
       answer: 'enak',
     },
+    {
+      question: 'Lengkapi konjugasi: "Er ___ gern Brot." (essen)',
+      options: ['esse', 'isst', 'essen'],
+      answer: 'isst',
+    },
   ],
 };
