@@ -72,7 +72,7 @@ Proyek punya **tiga pilar belajar aktif**:
 - **Grammar:** setiap topik punya `explanation`, `notes`, `tables`, `examples`, `exercises`.
 - **Grundlagen:** setiap topik punya `intro`, `groups[]` (berisi `items[]`), `exercises[]`. Item gunakan field `translation` (bukan `id`).
 - **`speakText`** di `BasicsItem` — isi jika teks TTS berbeda dari `de` (contoh: huruf kapital Alphabet gunakan nama bunyi seperti "ah", "beh").
-- Pisahkan render materi dari cek login — halaman materi harus bisa dirender tanpa login (siap SEO).
+- Pisahkan render materi dari cek login — halaman materi harus bisa dirender tanpa login (siap SEO). **Sudah diterapkan**: 3 topik pertama (`order` 1–3) tiap pilar terbuka penuh untuk tamu; topik selanjutnya terkunci & minta login. Lihat bagian "Akses & Gating Konten".
 - Warna utama: `#2dd4bf` (teal-brand), `#5eead4` (teal-soft), `#0f766e` (teal-deep), `#f0fdfa` (teal-bg).
 - TDD untuk logika (loader, progress, latihan). Commit kecil & sering.
 - Jangan taruh secret di kode — pakai `.env.local`.
@@ -96,6 +96,20 @@ Proyek punya **tiga pilar belajar aktif**:
 | `TargetHarian` | `components/TargetHarian.tsx` | Tagesziel di dashboard |
 | `WortDesTages` | `components/WortDesTages.tsx` | Wort des Tages dari `content/wordOfDay.ts` |
 | `TantanganMingguIni` | `components/TantanganMingguIni.tsx` | Tantangan streak mingguan |
+
+---
+
+## Akses & Gating Konten (`lib/access.ts`)
+
+Materi (Grammar, Grundlagen, Wortschatz) bisa dirender **tanpa login** — siap SEO & memungkinkan pengunjung mencicipi sebelum daftar. Hanya aksi yang menyimpan data personal (mis. `MarkCompleteButton` → `user_progress`) yang benar-benar butuh sesi.
+
+- `FREE_PREVIEW_LIMIT = 3` — jumlah topik pertama (berdasarkan `order`) yang terbuka untuk tamu di tiap pilar
+- `isGuestLocked(order, user)` — `true` jika tamu (`!user`) mencoba akses topik dengan `order > FREE_PREVIEW_LIMIT`
+- Dipakai di tiap halaman `[topic]/page.tsx`:
+  - `if (isGuestLocked(topic.order, user)) redirect("/login")` — gerbang server-side sebelum render
+  - Item sidebar ditandai `locked: isGuestLocked(t.order, user)` (Wortschatz digabung dengan flag `available`)
+- `middleware.ts` → `PROTECTED_PREFIXES` hanya berisi `/dashboard` dan `/profil` (bukan path materi lagi)
+- Penegakan berlapis: pengecekan server (`supabase.auth.getUser()`) + RLS Supabase pada `user_progress` (`auth.uid() = user_id`) sebagai jaring pengaman kedua
 
 ---
 
@@ -125,13 +139,13 @@ Proyek punya **tiga pilar belajar aktif**:
 |---|---|
 | `/` | Homepage publik |
 | `/login` | Login / register |
-| `/dashboard` | Dashboard utama (perlu login) |
+| `/dashboard` | Dashboard utama (perlu login — di `PROTECTED_PREFIXES`) |
 | `/grundlagen` | Redirect ke topik Grundlagen pertama |
-| `/grundlagen/[id]` | Halaman topik Grundlagen |
+| `/grundlagen/[id]` | Halaman topik Grundlagen — terbuka untuk tamu jika `order ≤ 3`, selain itu redirect ke `/login` |
 | `/grammar` | Redirect ke `/dashboard` |
-| `/grammar/[id]` | Halaman topik Grammar |
+| `/grammar/[id]` | Halaman topik Grammar — terbuka untuk tamu jika `order ≤ 3`, selain itu redirect ke `/login` |
 | `/wortschatz` | Redirect ke topik Wortschatz pertama yang tersedia |
-| `/wortschatz/[id]` | Halaman topik Wortschatz |
+| `/wortschatz/[id]` | Halaman topik Wortschatz — terbuka untuk tamu jika `order ≤ 3` & `available`, selain itu redirect ke `/login` |
 | `/auth/signout` | Route sign out |
 
 ---
