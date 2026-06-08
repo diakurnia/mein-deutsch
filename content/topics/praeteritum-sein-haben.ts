@@ -48,5 +48,15 @@ export const praeteritumSeinHaben: GrammarTopic = {
       options: ["war", "hattest", "hatte"],
       answer: "hatte",
     },
+    {
+      question: "Früher ___ ich klein und schüchtern. (sein, ich)",
+      options: ["war", "warst", "waren"],
+      answer: "war",
+    },
+    {
+      question: "___ ihr gestern viel Spaß? (haben, ihr)",
+      options: ["Hattet", "Hatten", "Hattest"],
+      answer: "Hattet",
+    },
   ],
 };

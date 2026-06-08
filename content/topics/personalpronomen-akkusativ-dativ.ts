@@ -51,5 +51,15 @@ export const personalpronomenAkkusativDativ: GrammarTopic = {
       options: ["ihn", "ihm", "er"],
       answer: "ihm",
     },
+    {
+      question: "Wie geht es ___, Herr Schmidt? (Sie — Dativ)",
+      options: ["Ihnen", "Sie", "Ihr"],
+      answer: "Ihnen",
+    },
+    {
+      question: "Ist das Buch interessant? - Ja, ich finde ___ gut. (es — Akkusativ)",
+      options: ["es", "ihm", "ihn"],
+      answer: "es",
+    },
   ],
 };

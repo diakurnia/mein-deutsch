@@ -47,5 +47,15 @@ export const imperativ: GrammarTopic = {
       options: ["Fahr", "Fährst", "Fahren"],
       answer: "Fahr",
     },
+    {
+      question: "Kinder, ___ bitte leise! (sein, bentuk ihr)",
+      options: ["seid", "sei", "seien"],
+      answer: "seid",
+    },
+    {
+      question: "Anna, ___ mir bitte! (helfen, bentuk du)",
+      options: ["hilf", "helf", "hilfst"],
+      answer: "hilf",
+    },
   ],
 };

@@ -58,5 +58,15 @@ export const trennbareVerben: GrammarTopic = {
       options: ["einkaufen", "kaufen ein", "kaufe ein"],
       answer: "einkaufen",
     },
+    {
+      question: "Ich ___ dich heute Abend ___. (anrufen)",
+      options: ["rufe / an", "rufe an /", "an / rufe"],
+      answer: "rufe / an",
+    },
+    {
+      question: "Wann ___ der Film ___? (anfangen)",
+      options: ["fängt / an", "fangt / an", "anfängt /"],
+      answer: "fängt / an",
+    },
   ],
 };

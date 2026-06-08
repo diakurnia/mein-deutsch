@@ -47,5 +47,15 @@ export const nomenPlural: GrammarTopic = {
       options: ["Apfel", "Äpfel", "Apfeln"],
       answer: "Äpfel",
     },
+    {
+      question: "Bentuk jamak dari 'die Frau' adalah…",
+      options: ["die Frauen", "die Fraue", "die Fräue"],
+      answer: "die Frauen",
+    },
+    {
+      question: "Artikel untuk SEMUA kata benda jamak adalah…",
+      options: ["die", "der", "das"],
+      answer: "die",
+    },
   ],
 };

@@ -54,5 +54,15 @@ export const jaNeinFragen: GrammarTopic = {
       options: ["Ja", "Nein", "Doch"],
       answer: "Ja",
     },
+    {
+      question: "Pada Ja-/Nein-Frage, kata kerja berada di…",
+      options: ["Posisi 1", "Posisi 2", "Posisi terakhir"],
+      answer: "Posisi 1",
+    },
+    {
+      question: "Magst du keinen Tee? - ___, ich trinke gern Tee.",
+      options: ["Doch", "Ja", "Nein"],
+      answer: "Doch",
+    },
   ],
 };

@@ -64,5 +64,15 @@ export const konjunktionen: GrammarTopic = {
       options: ["aber", "oder", "sondern"],
       answer: "sondern",
     },
+    {
+      question: "'Möchtest du Tee ___ Kaffee?' (atau)",
+      options: ["oder", "und", "aber"],
+      answer: "oder",
+    },
+    {
+      question: "'Ich trinke Kaffee ___ esse ein Brötchen.' (dan)",
+      options: ["und", "oder", "denn"],
+      answer: "und",
+    },
   ],
 };

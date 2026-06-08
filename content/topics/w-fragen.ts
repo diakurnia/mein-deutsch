@@ -58,5 +58,15 @@ export const wFragen: GrammarTopic = {
       options: ["Wer", "Wie", "Was"],
       answer: "Was",
     },
+    {
+      question: "___ wohnst du? - In München.",
+      options: ["Wo", "Woher", "Wann"],
+      answer: "Wo",
+    },
+    {
+      question: "___ ist das? - Das ist Frau Schmidt.",
+      options: ["Wer", "Was", "Wie"],
+      answer: "Wer",
+    },
   ],
 };

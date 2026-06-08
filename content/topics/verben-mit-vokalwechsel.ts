@@ -48,5 +48,15 @@ export const verbenMitVokalwechsel: GrammarTopic = {
       options: ["Hilfst", "Helfst", "Helft"],
       answer: "Hilfst",
     },
+    {
+      question: "Anna ___ gern Pizza zum Abendessen. (essen)",
+      options: ["isst", "esst", "esse"],
+      answer: "isst",
+    },
+    {
+      question: "Manakah yang BENAR untuk bentuk 'ihr'?",
+      options: ["ihr esst", "ihr isst", "ihr essts"],
+      answer: "ihr esst",
+    },
   ],
 };

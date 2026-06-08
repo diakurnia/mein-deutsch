@@ -69,5 +69,15 @@ export const komparativSuperlativ: GrammarTopic = {
       options: ["mehrer", "am meisten", "am vielsten"],
       answer: "am meisten",
     },
+    {
+      question: "Untuk membandingkan dua hal dipakai kata…",
+      options: ["als", "wie", "am"],
+      answer: "als",
+    },
+    {
+      question: "Komparativ dari 'alt' adalah…",
+      options: ["älter", "alter", "am ältesten"],
+      answer: "älter",
+    },
   ],
 };

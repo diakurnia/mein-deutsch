@@ -51,5 +51,15 @@ export const negation: GrammarTopic = {
       options: ["nicht", "kein", "keine"],
       answer: "keine",
     },
+    {
+      question: "Das ist ___ Apfel, das ist eine Birne. (maskulin)",
+      options: ["kein", "keine", "nicht"],
+      answer: "kein",
+    },
+    {
+      question: "Er wohnt ___ in Berlin.",
+      options: ["nicht", "kein", "keine"],
+      answer: "nicht",
+    },
   ],
 };

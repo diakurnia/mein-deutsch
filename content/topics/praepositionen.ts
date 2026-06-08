@@ -104,5 +104,10 @@ export const praepositionen: GrammarTopic = {
       options: ["im", "um", "am"],
       answer: "am",
     },
+    {
+      question: "'Ich gehe in ___ Küche.' (Wohin? — ke dalam dapur)",
+      options: ["die", "der", "dem"],
+      answer: "die",
+    },
   ],
 };

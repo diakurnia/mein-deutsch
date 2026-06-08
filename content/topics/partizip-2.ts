@@ -47,5 +47,15 @@ export const partizip2: GrammarTopic = {
       options: ["gebesucht", "besuchen", "besucht"],
       answer: "besucht",
     },
+    {
+      question: "Ich habe in Berlin ___ (studieren).",
+      options: ["studiert", "gestudiert", "studieren"],
+      answer: "studiert",
+    },
+    {
+      question: "Partizip II dari kata kerja beraturan 'machen' adalah…",
+      options: ["gemacht", "gemachen", "macht"],
+      answer: "gemacht",
+    },
   ],
 };

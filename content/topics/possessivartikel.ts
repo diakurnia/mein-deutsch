@@ -58,5 +58,15 @@ export const possessivartikel: GrammarTopic = {
       options: ["sein", "seine", "seinen"],
       answer: "seinen",
     },
+    {
+      question: "Das ist ___ Brille. (ich — feminin, Nominativ)",
+      options: ["meine", "mein", "meinen"],
+      answer: "meine",
+    },
+    {
+      question: "Possessivartikel untuk 'sie (tunggal)' adalah…",
+      options: ["ihr", "sein", "dein"],
+      answer: "ihr",
+    },
   ],
 };

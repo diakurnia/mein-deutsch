@@ -45,5 +45,15 @@ export const artikelInterrogativDemonstrativ: GrammarTopic = {
       options: ["Welcher", "Welches", "Welche"],
       answer: "Welche",
     },
+    {
+      question: "___ Hemd findest du schön? (das Hemd — Nominativ)",
+      options: ["Welches", "Welcher", "Welchen"],
+      answer: "Welches",
+    },
+    {
+      question: "Akhiran 'welcher/dieser' mengikuti pola artikel…",
+      options: ["pasti (der/die/das)", "tidak tentu (ein/eine)", "negasi (kein)"],
+      answer: "pasti (der/die/das)",
+    },
   ],
 };

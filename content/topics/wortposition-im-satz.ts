@@ -55,5 +55,15 @@ export const wortpositionImSatz: GrammarTopic = {
       options: ["Hast", "Hast du", "Du hast"],
       answer: "Hast",
     },
+    {
+      question: "Susunan yang BENAR (inversi): 'Morgen ___'",
+      options: ["gehe ich ins Kino", "ich gehe ins Kino", "ich ins Kino gehe"],
+      answer: "gehe ich ins Kino",
+    },
+    {
+      question: "Dalam kalimat pernyataan, kata kerja selalu di…",
+      options: ["Posisi 2", "Posisi 1", "Posisi terakhir"],
+      answer: "Posisi 2",
+    },
   ],
 };

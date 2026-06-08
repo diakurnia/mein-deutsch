@@ -48,5 +48,15 @@ export const konjugationPraesens: GrammarTopic = {
       options: ["wohnst", "wohne", "wohnt"],
       answer: "wohnst",
     },
+    {
+      question: "Du ___ bei BMW. (arbeiten)",
+      options: ["arbeitest", "arbeitst", "arbeitet"],
+      answer: "arbeitest",
+    },
+    {
+      question: "Ihr ___ Fußball im Park. (spielen)",
+      options: ["spielt", "spiele", "spielen"],
+      answer: "spielt",
+    },
   ],
 };

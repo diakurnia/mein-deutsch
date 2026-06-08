@@ -60,5 +60,15 @@ export const verbenSeinHaben: GrammarTopic = {
       options: ["ist", "bin", "bist"],
       answer: "ist",
     },
+    {
+      question: "Wir ___ aus Indonesien und ___ zwei Kinder.",
+      options: ["sind / haben", "seid / habt", "sind / habt"],
+      answer: "sind / haben",
+    },
+    {
+      question: "___ du, wie spät es ist?",
+      options: ["Weißt", "Weiß", "Wisst"],
+      answer: "Weißt",
+    },
   ],
 };

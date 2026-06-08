@@ -71,5 +71,10 @@ export const artikelKasusTabelle: GrammarTopic = {
       options: ["den", "dem", "der"],
       answer: "dem",
     },
+    {
+      question: "'Ich sehe ___ Mann.' (Akkusativ maskulin bestimmter Artikel)",
+      options: ["der", "den", "dem"],
+      answer: "den",
+    },
   ],
 };

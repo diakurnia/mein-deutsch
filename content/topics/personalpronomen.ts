@@ -45,5 +45,15 @@ export const personalpronomen: GrammarTopic = {
       options: ["du", "ihr", "Sie"],
       answer: "Sie",
     },
+    {
+      question: "Lisa und Tom, woher kommt ___?",
+      options: ["ihr", "wir", "sie"],
+      answer: "ihr",
+    },
+    {
+      question: "Das ist die Lampe. ___ ist modern.",
+      options: ["Er", "Sie", "Es"],
+      answer: "Sie",
+    },
   ],
 };

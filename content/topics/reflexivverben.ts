@@ -68,5 +68,15 @@ export const reflexivverben: GrammarTopic = {
       options: ["Saya memperkenalkan diri.", "Saya senang / merasa gembira.", "Saya merasa lelah."],
       answer: "Saya senang / merasa gembira.",
     },
+    {
+      question: "Wir treffen ___ um drei Uhr.",
+      options: ["uns", "sich", "euch"],
+      answer: "uns",
+    },
+    {
+      question: "Wie fühlen Sie ___ heute?",
+      options: ["sich", "euch", "uns"],
+      answer: "sich",
+    },
   ],
 };

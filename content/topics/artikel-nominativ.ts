@@ -28,5 +28,7 @@ export const artikelNominativ: GrammarTopic = {
     { question: "___ Tisch ist groß.", options: ["der", "die", "das"], answer: "der" },
     { question: "___ Lampe ist neu.", options: ["der", "die", "das"], answer: "die" },
     { question: "___ Kind spielt.", options: ["der", "die", "das"], answer: "das" },
+    { question: "___ Bücher sind interessant. (jamak)", options: ["der", "die", "das"], answer: "die" },
+    { question: "Kata berakhiran -ung (mis. 'Wohnung') biasanya berartikel ___.", options: ["der", "die", "das"], answer: "die" },
   ],
 };

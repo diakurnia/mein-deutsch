@@ -46,5 +46,15 @@ export const satzklammer: GrammarTopic = {
       options: ["wollen / schwimmen", "gehen / wollen", "wollen / schwimmt"],
       answer: "wollen / schwimmen",
     },
+    {
+      question: "Bagian kata kerja di akhir kalimat (Infinitiv/Prefiks)…",
+      options: ["tidak pernah dikonjugasikan", "selalu dikonjugasikan", "selalu jadi Partizip 2"],
+      answer: "tidak pernah dikonjugasikan",
+    },
+    {
+      question: "Können Sie mir das bitte ___?",
+      options: ["zeigen", "zeigt", "gezeigt"],
+      answer: "zeigen",
+    },
   ],
 };

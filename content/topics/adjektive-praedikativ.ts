@@ -69,5 +69,15 @@ export const adjektivePraedikativ: GrammarTopic = {
       options: ["sehr", "nicht", "zu"],
       answer: "zu",
     },
+    {
+      question: "Lawan kata 'laut' adalah…",
+      options: ["leise", "leer", "leicht"],
+      answer: "leise",
+    },
+    {
+      question: "Pada A1, kata sifat prädikativ (setelah sein)…",
+      options: ["tidak berubah bentuk", "selalu berakhiran -e", "berubah sesuai gender"],
+      answer: "tidak berubah bentuk",
+    },
   ],
 };
