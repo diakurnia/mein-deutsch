@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getAllVocab, getAvailableVocab, getVocab } from "@/content/vocab";
+import { isGuestLocked } from "@/lib/access";
 import { statusFor, summarizeFor, type ProgressRow } from "@/lib/progress";
 import { TopicSidebar, type SidebarItem } from "@/components/TopicSidebar";
 import { VocabGrid } from "@/components/VocabGrid";
@@ -26,13 +27,16 @@ export default async function VocabTopicPage({
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) redirect("/login");
+  if (isGuestLocked(topic.order, user)) redirect("/login");
 
-  const { data } = await supabase
-    .from("user_progress")
-    .select("topic_id, status")
-    .eq("user_id", user.id);
-  const rows = (data ?? []) as ProgressRow[];
+  let rows: ProgressRow[] = [];
+  if (user) {
+    const { data } = await supabase
+      .from("user_progress")
+      .select("topic_id, status")
+      .eq("user_id", user.id);
+    rows = (data ?? []) as ProgressRow[];
+  }
 
   const allTopics = getAllVocab();
   const availableTopics = getAvailableVocab();
@@ -44,7 +48,7 @@ export default async function VocabTopicPage({
     title: `${t.icon} ${t.title}`,
     order: t.order,
     status: statusFor(rows, t.id),
-    locked: !t.available,
+    locked: !t.available || isGuestLocked(t.order, user),
   }));
 
   const idx = availableTopics.findIndex((t) => t.id === topic.id);

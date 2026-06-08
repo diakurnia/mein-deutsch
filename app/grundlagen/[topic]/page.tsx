@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getBasic, getAllBasics } from "@/content/basics";
+import { isGuestLocked } from "@/lib/access";
 import { statusFor, summarizeFor, type ProgressRow } from "@/lib/progress";
 import { TopicSidebar, type SidebarItem } from "@/components/TopicSidebar";
 import { RichText } from "@/components/RichText";
@@ -26,13 +27,16 @@ export default async function BasicsTopicPage({
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) redirect("/login");
+  if (isGuestLocked(topic.order, user)) redirect("/login");
 
-  const { data } = await supabase
-    .from("user_progress")
-    .select("topic_id, status")
-    .eq("user_id", user.id);
-  const rows = (data ?? []) as ProgressRow[];
+  let rows: ProgressRow[] = [];
+  if (user) {
+    const { data } = await supabase
+      .from("user_progress")
+      .select("topic_id, status")
+      .eq("user_id", user.id);
+    rows = (data ?? []) as ProgressRow[];
+  }
 
   const topics = getAllBasics();
   const summary = summarizeFor(rows, topics.map((t) => t.id));
@@ -43,6 +47,7 @@ export default async function BasicsTopicPage({
     title: t.title,
     order: t.order,
     status: statusFor(rows, t.id),
+    locked: isGuestLocked(t.order, user),
   }));
 
   const idx = topics.findIndex((t) => t.id === topic.id);

@@ -1,4 +1,3 @@
-import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getAllTopics } from "@/content/topics";
 import { getAllBasics } from "@/content/basics";
@@ -14,12 +13,10 @@ export default async function GrundlagenLayout({
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) redirect("/login");
-
   const firstTopicId = getAllTopics()[0]?.id ?? "";
   const firstBasicsId = getAllBasics()[0]?.id ?? "";
   const firstVocabId = getAvailableVocab()[0]?.id ?? "";
-  const email = user.email ?? "user";
+  const email = user?.email ?? "tamu";
   const userName = email.split("@")[0];
   const userInitial = userName.charAt(0).toUpperCase();
 
